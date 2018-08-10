@@ -308,20 +308,20 @@
 						<el-submenu index="1" class="md-main-mid-bg md-main-mid-one">
 							<template slot="title" style="">Design Mind</template>
 							<el-submenu index="1-1">
-								<template slot="title">情趣</template>
+								<div slot="title" @click="onClickBigType('情趣')">情趣</div>
 								<el-menu-item index="1-1-1" class="md-main-mid-inner md-main-mid-inner-color1">对自己好一点，买体面的腕表、吃精致的美食,安静的辣椒水的垃圾达拉斯的加拉受打击了按时打开拉萨扩大上课大大撒大撒大撒大撒大撒大撒大撒大撒法的规定</el-menu-item>
 							</el-submenu>
 							<el-submenu index="1-2">
-								<template slot="title">儿童医疗器械</template>
+								<div slot="title" @click="onClickBigType('儿童医疗器械')">儿童医疗器械</div>
 								<el-menu-item index="1-2-1" class="md-main-mid-inner md-main-mid-inner-color2">对自己好一点，买体面的腕表、吃精致的美食,安静的辣椒水的垃圾达拉斯的加拉受打击了按时打开拉萨扩大上课大大撒大撒大撒大撒大撒大撒大撒大撒法的规定</el-menu-item>
 							</el-submenu>
-							<el-menu-item index="1-3">电子产品</el-menu-item>
-							<el-menu-item index="1-4">其它</el-menu-item>
+							<el-menu-item index="1-3" @click="onClickBigType('电子产品')" >电子产品</el-menu-item>
+							<el-menu-item index="1-4" @click="onClickBigType('其它')">其它</el-menu-item>
 						</el-submenu>
 						<el-submenu index="2" class="md-main-mid-bg md-main-mid-two">
 							<template slot="title" style="">Our Work</template>
-							<el-menu-item index="2-1">自然野</el-menu-item>
-							<el-menu-item index="2-2">其它</el-menu-item>
+							<el-menu-item index="2-1" @click="onClickBigType('自然野')">自然野</el-menu-item>
+							<el-menu-item index="2-2" @click="onClickBigType('其它')">其它</el-menu-item>
 							<el-submenu index="2-3">
 								<template slot="title">选项4</template>
 								<el-menu-item index="2-3-1">选项1</el-menu-item>
@@ -432,7 +432,7 @@
 			<div class="box bottom"></div>
 		</div>
 		</div>
-		<script type="text/javascript" src="../js/libs/vue.min.js"></script>
+		<script type="text/javascript" src="../js/libs/vue.min.js" ></script>
 		<script type="text/javascript" src="../js/libs/elm.js"></script>
 		<script type="text/javascript" src="../js/libs/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/function.js"></script>
@@ -472,6 +472,9 @@
 										scrollTop: $('.bottom').offset().top
 									}, 800);
 								})
+							},
+							onClickBigType(type) {
+								console.log(`您点击了${type}`);
 							}
 						}
 					})

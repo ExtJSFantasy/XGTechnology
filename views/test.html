@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/elm.css" />
+	</head>
+
+	<body>
+		<div>
+			<ul class="el-menu" :class="{
+			      'el-menu--horizontal': mode === 'horizontal',
+			      'el-menu--dark': theme === 'dark'
+			    }">
+				<slot></slot>
+			</ul>
+		</div>
+		<script type="text/javascript" src="../js/libs/elm.js"></script>
+	</body>
+
+</html>
