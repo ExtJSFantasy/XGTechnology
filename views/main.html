@@ -23,17 +23,17 @@
 			
 			.el-menu--horizontal>.el-submenu .el-submenu__title {
 				border-bottom-color: #F8F7F8 !important;
-				background-color: transparent !important;
+				/*background-color: transparent !important;*/
 				border-bottom: 1px solid transparent;
 			}
 			
 			.el-menu--horizontal>.el-menu-item {
 				border-bottom: 1px solid transparent;
-				background-color: transparent !important;
+				/*background-color: transparent !important;//＃4F5153*/
 			}
 			
 			.bg {
-				background: url('../images/main-logo.png');
+				background: url('../images/main-logo1.png');
 				height: 600px;
 				text-align: center;
 				line-height: 600px;
@@ -69,13 +69,26 @@
 				margin-right: 0px !important;
 				margin-top: 10px;
 			}
+			/*.el-col-8 {
+				padding-left: 0 !important;
+			}*/
 			
-			.el-col-8{
-				/*padding-left: 0 !important;*/
+			.el-col-8 {
+				/*padding-right: 0 !important;*/
 			}
 			
-			.el-col-8{
-				/*padding-right: 0 !important;*/
+			.el-menu-item,
+			.el-submenu__title {
+				white-space: inherit;
+			}
+			
+			.el-menu--horizontal .el-menu .el-menu-item,
+			.el-menu--horizontal .el-menu .el-submenu__title {
+				height: 100%;
+			}
+			
+			.el-menu--popup {
+				padding: 0;
 			}
 			
 			.time {
@@ -107,69 +120,244 @@
 			.clearfix:after {
 				clear: both
 			}
+			
+			.time:before {
+				content: '';
+				background: url('../images/symbol-nabla.png') no-repeat left center;
+				/*兼容没测*/
+				position: absolute;
+				z-index: 2;
+				width: 32px;
+				height: 12px;
+				margin-left: -35px;
+			}
+			
+			.md-main {
+				height: 100%;
+			}
+			
+			.md-main-display {
+				display: flex;
+			}
+			
+			.md-main-title {
+				flex: 2;
+				position: relative;
+			}
+			
+			.md-main-title-left-logo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.md-main-title-left-logo img {
+				height: 60px;
+			}
+			
+			.md-main-mid {
+				flex: 5;
+			}
+			
+			.md-main-mid-display {
+				display: flex;
+				padding-left: 55px;
+			}
+			
+			.md-main-mid-bg {
+				text-align: center;
+				flex: 1;
+			}
+			
+			.md-main-mid-one {
+				border-bottom-color: #F8F7F8;
+			}
+			
+			.md-main-mid-two {
+				margin-left: 55px;
+				border-bottom-color: #F8F7F8;
+			}
+			
+			.md-main-mid-three {
+				border-bottom-color: #F8F7F8 !important;
+				margin-left: 55px !important;
+			}
+			
+			.md-main-mid-inner {
+				max-width: 200px;
+				clear: left;
+				display: block;
+				line-height: 24px !important;
+				padding: 0;
+				padding-left: 5px;
+			}
+			
+			.md-main-mid-inner-color1 {
+				background-color: #A2271D !important;
+			}
+			
+			.md-main-mid-inner-color2 {
+				background-color: #029245 !important;
+			}
+			
+			.md-main-right {
+				display: flex;
+				height: 100%;
+				justify-content: center;
+				align-items: Center;
+			}
+			
+			.md-main-right img {
+				width: 45px;
+			}
+			
+			.md-main-mid-tip {
+				width: 100%;
+			}
+			
+			.md-main-mid-tip-div {
+				width: 10%;
+				margin: auto;
+				text-align: center;
+			}
+			
+			.md-main-mid-tip-div img {
+				width: 60px;
+			}
+			/*
+			 底部
+			 * */
+			
+			.md-footer {
+				background-color: #F8F7F8;
+				height: 100%;
+			}
+			
+			.md-footer-padding {
+				padding-left: 10%;
+				padding-top: 1%;
+			}
+			
+			.md-footer-module {
+				-webkit-margin-after: .1em;
+			}
+			
+			.md-footer-line {
+				width: 100%;
+				height: 1px;
+				background-color: #95989A;
+			}
+			
+			.md-footer-row-right {
+				margin-right: 24px !important;
+			}
+			
+			.md-footer-card-des {
+				padding: 14px;
+				height: 230px
+			}
+			
+			.md-footer-p {
+				line-height: 17px;
+			}
+			/*第二部分*/
+			
+			.md-footer-module2 {
+				padding-right: 10%;
+				padding-bottom: 10%;
+				background-color: rgb(248, 247, 248);
+			}
+			
+			.md-footer-module2-name {
+				text-align: right;
+				-webkit-margin-after: .1em;
+			}
+			
+			.md-footer-row-left {
+				margin-left: 24px !important;
+			}
+			
+			.md-footer-module2-round {
+				position: absolute;
+				height: 45px;
+				width: 45px;
+				background-color: #E6E4E6;
+				border-radius: 45px;
+				margin-left: 3%;
+				margin-top: -20px;
+			}
+			
+			.md-footer-module2-content {
+				padding: 14px;
+				height: 230px;
+				background-color: #95989A;
+			}
 		</style>
 	</head>
 
 	<body>
-		<div id="main" style="height: 100%;">
-			<div id="header" style="display: flex;">
-				<div style="flex: 2;position: relative;">
-					<div style="
-    display: flex;
-    justify-content: center;
-    align-items: center;">
-						<img style="height: 60px;" src="../images/main-logo.png" />
+		<div id="main" class="md-main">
+			<div id="header" class="md-main-display">
+				<div class="md-main-title">
+					<div class="md-main-title-left-logo">
+						<img :src="leftLogo" />
 					</div>
 				</div>
-				<div style="flex: 5;">
+				<div class="md-main-mid">
 					<el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#95989A" text-color="#F8F7F8" active-text-color="#F8F7F8" style="display: flex;padding-left: 55px;">
-						<el-menu-item index="1" style="text-align: center;flex: 1;border-bottom-color: #F8F7F8;
-    background-color: rgb(84, 92, 100);">Design Mind</el-menu-item>
-						<el-submenu index="2" style="text-align: center;flex: 1;margin-left: 55px;">
+						<el-submenu index="1" class="md-main-mid-bg md-main-mid-one">
+							<template slot="title" style="">Design Mind</template>
+							<el-submenu index="1-1">
+								<template slot="title">情趣</template>
+								<el-menu-item index="1-1-1" class="md-main-mid-inner md-main-mid-inner-color1">对自己好一点，买体面的腕表、吃精致的美食,安静的辣椒水的垃圾达拉斯的加拉受打击了按时打开拉萨扩大上课大大撒大撒大撒大撒大撒大撒大撒大撒法的规定</el-menu-item>
+							</el-submenu>
+							<el-submenu index="1-2">
+								<template slot="title">儿童医疗器械</template>
+								<el-menu-item index="1-2-1" class="md-main-mid-inner md-main-mid-inner-color2">对自己好一点，买体面的腕表、吃精致的美食,安静的辣椒水的垃圾达拉斯的加拉受打击了按时打开拉萨扩大上课大大撒大撒大撒大撒大撒大撒大撒大撒法的规定</el-menu-item>
+							</el-submenu>
+							<el-menu-item index="1-3">电子产品</el-menu-item>
+							<el-menu-item index="1-4">其它</el-menu-item>
+						</el-submenu>
+						<el-submenu index="2" class="md-main-mid-bg md-main-mid-two">
 							<template slot="title" style="">Our Work</template>
-							<el-menu-item index="2-1">选项1</el-menu-item>
-							<el-menu-item index="2-2">选项2</el-menu-item>
-							<el-menu-item index="2-3">选项3</el-menu-item>
-							<el-submenu index="2-4">
+							<el-menu-item index="2-1">自然野</el-menu-item>
+							<el-menu-item index="2-2">其它</el-menu-item>
+							<el-submenu index="2-3">
 								<template slot="title">选项4</template>
-								<el-menu-item index="2-4-1">选项1</el-menu-item>
-								<el-menu-item index="2-4-2">选项2</el-menu-item>
-								<el-menu-item index="2-4-3">选项3</el-menu-item>
+								<el-menu-item index="2-3-1">选项1</el-menu-item>
+								<el-menu-item index="2-3-2">选项2</el-menu-item>
+								<el-menu-item index="2-3-3">选项3</el-menu-item>
 							</el-submenu>
 						</el-submenu>
-						<el-menu-item index="3" style="flex: 1;text-align: center;
-    border-bottom-color: #F8F7F8;
-    background-color: rgb(84, 92, 100);margin-left: 55px;">Get in Touch</el-menu-item>
+						<el-menu-item index="3" class="md-main-mid-bg md-main-mid-three">Get in Touch</el-menu-item>
 					</el-menu>
 				</div>
-				<div style="flex: 2;position: relative;">
-					<div style="display: flex;height: 100%;
-				justify-content: center;
-				align-items: Center;">
-						<img src="../images/search.png" style="width: 45px;" />
+				<div class="md-main-title">
+					<div class="md-main-right">
+						<img src="../images/search.png" />
 					</div>
 				</div>
 			</div>
 			<div id="main2" style="">
 				<div class="bg bg-blur"></div>
 				<div class="content content-front">发现生活的艰难，然后用设计产品去填满</div>
-				<div style="width: 100%;">
-					<div style="width: 10%;margin: auto;text-align: center;" @click="ongClickDown"><img style="width: 60px;" src="../images/updown.png" /></div>
+				<div class="md-main-mid-tip">
+					<div class="md-main-mid-tip-div" @click="ongClickDown"><img src="../images/updown.png" /></div>
 				</div>
 			</div>
-			<div id="footer" style="background-color: #F8F7F8;height: 100%;">
-				<div style="padding-left: 10%;padding-top: 1%;">
-					<h3 style="-webkit-margin-after: .1em;">News</h3>
-					<div style="width: 100%;height: 1px;background-color: #95989A;"></div>
-					<el-row :gutter="24" style="margin-right: 24px !important;">
+			<div id="footer" class="md-footer">
+				<div class="md-footer-padding">
+					<h3 class="md-footer-module">News</h3>
+					<div class="md-footer-line"></div>
+					<el-row :gutter="24" class="md-footer-row-right">
 						<el-col :span="8">
 							<el-card shadow="hover">
 								<img src="../images/hamburger.png" class="image">
-								<div style="padding: 14px;">
+								<div class="md-footer-card-des">
 									<span>好吃的汉堡</span>
 									<div class="bottom clearfix">
-										<time class="time">{{ new Date() }}</time>
-										<el-button type="text" class="button">操作按钮</el-button>
+										<time class="time">{{FormatDateYMDHMS2(new Date())}}</time>
+										<p class="md-footer-p">Life is not easy for any of us. We must work,and above all we must believe in ourselves .We must believe that each one of us is able to do something well, and that, when we discover what this something is, we must work hard at it until we succeed</p>
 									</div>
 								</div>
 							</el-card>
@@ -177,11 +365,11 @@
 						<el-col :span="8">
 							<el-card shadow="hover">
 								<img src="../images/hamburger.png" class="image">
-								<div style="padding: 14px;">
+								<div class="md-footer-card-des">
 									<span>好吃的汉堡</span>
 									<div class="bottom clearfix">
-										<time class="time">{{ new Date() }}</time>
-										<el-button type="text" class="button">操作按钮</el-button>
+										<time class="time">{{FormatDateYMDHMS2(new Date())}}</time>
+										<p class="md-footer-p">Life is not easy for any of us. We must work,and above all we must believe in ourselves .We must believe that each one of us is able to do something well, and that, when we discover what this something is, we must work hard at it until we succeed</p>
 									</div>
 								</div>
 							</el-card>
@@ -189,31 +377,29 @@
 						<el-col :span="8">
 							<el-card shadow="hover">
 								<img src="../images/hamburger.png" class="image">
-								<div style="padding: 14px;">
+								<div class="md-footer-card-des">
 									<span>好吃的汉堡</span>
 									<div class="bottom clearfix">
-										<time class="time">{{ new Date() }}</time>
-										<el-button type="text" class="button">操作按钮</el-button>
+										<time class="time">{{FormatDateYMDHMS2(new Date())}}</time>
+										<p class="md-footer-p">Life is not easy for any of us. We must work,and above all we must believe in ourselves .We must believe that each one of us is able to do something well, and that, when we discover what this something is</p>
 									</div>
 								</div>
 							</el-card>
 						</el-col>
 					</el-row>
 				</div>
-				<div style="    padding-right: 10%;
-    padding-bottom: 10%;
-    background-color: rgb(248, 247, 248);">
-					<h3 style="text-align: right;-webkit-margin-after: .1em;">设计师品牌</h3>
-					<div id="line" style="width: 100%;height: 1px;background-color: #95989A;"></div>
-					<el-row :gutter="24" style="margin-left: 24px !important;">
+				<div class="md-footer-module2">
+					<h3 class="md-footer-module2-name">设计师/品牌</h3>
+					<div id="line" class="md-footer-line"> </div>
+					<el-row :gutter="24" class="md-footer-row-left">
 						<el-col :span="8">
 							<el-card shadow="hover">
 								<img src="../images/hamburger.png" class="image">
-								<div style="padding: 14px;">
-									<span>好吃的汉堡</span>
+								<p class="md-footer-module2-round"></p>
+								<div class="md-footer-module2-content">
+									<div><span></span></div>
 									<div class="bottom clearfix">
-										<time class="time">{{ new Date() }}</time>
-										<el-button type="text" class="button">操作按钮</el-button>
+
 									</div>
 								</div>
 							</el-card>
@@ -221,11 +407,10 @@
 						<el-col :span="8">
 							<el-card shadow="hover">
 								<img src="../images/hamburger.png" class="image">
-								<div style="padding: 14px;">
-									<span>好吃的汉堡</span>
+								<p class="md-footer-module2-round"></p>
+								<div class="md-footer-module2-content">
 									<div class="bottom clearfix">
-										<time class="time">{{ new Date() }}</time>
-										<el-button type="text" class="button">操作按钮</el-button>
+
 									</div>
 								</div>
 							</el-card>
@@ -233,11 +418,10 @@
 						<el-col :span="8">
 							<el-card shadow="hover">
 								<img src="../images/hamburger.png" class="image">
-								<div style="padding: 14px;">
-									<span>好吃的汉堡</span>
+								<p class="md-footer-module2-round"></p>
+								<div class="md-footer-module2-content">
 									<div class="bottom clearfix">
-										<time class="time">{{ new Date() }}</time>
-										<el-button type="text" class="button">操作按钮</el-button>
+
 									</div>
 								</div>
 							</el-card>
@@ -251,36 +435,48 @@
 		<script type="text/javascript" src="../js/libs/vue.min.js"></script>
 		<script type="text/javascript" src="../js/libs/elm.js"></script>
 		<script type="text/javascript" src="../js/libs/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/function.js"></script>
 		<script type="text/javascript">
-			//(function() {
-			window.onload = function() {
-				new Vue({
-					el: '#main',
-					data() {
-						return {
-							activeIndex2: 1
-						}
-					},
-					mounted() {
-						//document.getElementById('footer').style.height = (document.body.clientHeight - document.getElementById('header').clientHeight - document.getElementById('main2').clientHeight) + 'px';
-					},
-					methods: {
-						handleSelect(key, keyPath) {
-							console.log(key, keyPath);
+			(function() {
+				window.onload = function() {
+					new Vue({
+						el: '#main',
+						data() {
+							return {
+								activeIndex2: 1,
+								leftLogo: '../images/main-logo1.png'
+							}
 						},
-						ongClickDown() {
-							this.$nextTick(function() {
-								//document.getElementById('line').style = 'width: 100%;height: 1px;background-color: #95989A;'
-								$('html,body').animate({
-									scrollTop: $('.bottom').offset().top
-								}, 800);
-							})
-						}
-					}
-				})
-			}
+						mounted() {
+							let i = 1;
+							let _this = this;
+							/*let _setInterval = setInterval(function() {
+								_this.leftLogo = "../images/main-logo" + i + ".png";
+								i++
+								if(i == 3) {
+									i = 1
+								}
+								_setInterval = null
+								clearInterval()
+							}, 2000);*/
 
-			//})()
+						},
+						methods: {
+							handleSelect(key, keyPath) {
+								console.log(key, keyPath);
+							},
+							//一键到底
+							ongClickDown() {
+								this.$nextTick(function() {
+									$('html,body').animate({
+										scrollTop: $('.bottom').offset().top
+									}, 800);
+								})
+							}
+						}
+					})
+				}
+			})()
 		</script>
 	</body>
 
