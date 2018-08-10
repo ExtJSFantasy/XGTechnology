@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/elm.css" />
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background-color: #95989A;
+				font-family: "Helvetica Neue";
+			}
+			
+			.el-menu--horizontal {
+				border-right: none;
+				border-bottom: solid 1px transparent;
+			}
+			
+			.el-menu--horizontal>.el-submenu .el-submenu__title {
+				border-bottom-color: #F8F7F8 !important;
+				background-color: transparent !important;
+				border-bottom: 1px solid transparent;
+			}
+			
+			.el-menu--horizontal>.el-menu-item {
+				border-bottom: 1px solid transparent;
+				background-color: transparent !important;
+			}
+			
+			.bg {
+				background: url('../images/main-logo.png');
+				height: 600px;
+				text-align: center;
+				line-height: 600px;
+			}
+			
+			.bg-blur {
+				float: left;
+				width: 100%;
+				height: 350px;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+				-webkit-filter: blur(15px);
+				-moz-filter: blur(15px);
+				-o-filter: blur(15px);
+				-ms-filter: blur(15px);
+				filter: blur(15px);
+			}
+			
+			.content-front {
+				position: absolute;
+				width: 100%;
+				/*height: 50%;*/
+				text-align: center;
+				line-height: 300px;
+				font-size: 40px;
+				color: #F8F7F8;
+				font-weight: lighter;
+			}
+			
+			.el-row {
+				margin-left: 0px !important;
+				margin-right: 0px !important;
+				margin-top: 10px;
+			}
+			
+			.el-col-8{
+				/*padding-left: 0 !important;*/
+			}
+			
+			.el-col-8{
+				/*padding-right: 0 !important;*/
+			}
+			
+			.time {
+				font-size: 13px;
+				color: #999;
+			}
+			
+			.bottom {
+				margin-top: 13px;
+				line-height: 12px;
+			}
+			
+			.button {
+				padding: 0;
+				float: right;
+			}
+			
+			.image {
+				width: 100%;
+				display: block;
+			}
+			
+			.clearfix:before,
+			.clearfix:after {
+				display: table;
+				content: "";
+			}
+			
+			.clearfix:after {
+				clear: both
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="main" style="height: 100%;">
+			<div id="header" style="display: flex;">
+				<div style="flex: 2;position: relative;">
+					<div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;">
+						<img style="height: 60px;" src="../images/main-logo.png" />
+					</div>
+				</div>
+				<div style="flex: 5;">
+					<el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#95989A" text-color="#F8F7F8" active-text-color="#F8F7F8" style="display: flex;padding-left: 55px;">
+						<el-menu-item index="1" style="text-align: center;flex: 1;border-bottom-color: #F8F7F8;
+    background-color: rgb(84, 92, 100);">Design Mind</el-menu-item>
+						<el-submenu index="2" style="text-align: center;flex: 1;margin-left: 55px;">
+							<template slot="title" style="">Our Work</template>
+							<el-menu-item index="2-1">选项1</el-menu-item>
+							<el-menu-item index="2-2">选项2</el-menu-item>
+							<el-menu-item index="2-3">选项3</el-menu-item>
+							<el-submenu index="2-4">
+								<template slot="title">选项4</template>
+								<el-menu-item index="2-4-1">选项1</el-menu-item>
+								<el-menu-item index="2-4-2">选项2</el-menu-item>
+								<el-menu-item index="2-4-3">选项3</el-menu-item>
+							</el-submenu>
+						</el-submenu>
+						<el-menu-item index="3" style="flex: 1;text-align: center;
+    border-bottom-color: #F8F7F8;
+    background-color: rgb(84, 92, 100);margin-left: 55px;">Get in Touch</el-menu-item>
+					</el-menu>
+				</div>
+				<div style="flex: 2;position: relative;">
+					<div style="display: flex;height: 100%;
+				justify-content: center;
+				align-items: Center;">
+						<img src="../images/search.png" style="width: 45px;" />
+					</div>
+				</div>
+			</div>
+			<div id="main2" style="">
+				<div class="bg bg-blur"></div>
+				<div class="content content-front">发现生活的艰难，然后用设计产品去填满</div>
+				<div style="width: 100%;">
+					<div style="width: 10%;margin: auto;text-align: center;" @click="ongClickDown"><img style="width: 60px;" src="../images/updown.png" /></div>
+				</div>
+			</div>
+			<div id="footer" style="background-color: #F8F7F8;height: 100%;">
+				<div style="padding-left: 10%;padding-top: 1%;">
+					<h3 style="-webkit-margin-after: .1em;">News</h3>
+					<div style="width: 100%;height: 1px;background-color: #95989A;"></div>
+					<el-row :gutter="24" style="margin-right: 24px !important;">
+						<el-col :span="8">
+							<el-card shadow="hover">
+								<img src="../images/hamburger.png" class="image">
+								<div style="padding: 14px;">
+									<span>好吃的汉堡</span>
+									<div class="bottom clearfix">
+										<time class="time">{{ new Date() }}</time>
+										<el-button type="text" class="button">操作按钮</el-button>
+									</div>
+								</div>
+							</el-card>
+						</el-col>
+						<el-col :span="8">
+							<el-card shadow="hover">
+								<img src="../images/hamburger.png" class="image">
+								<div style="padding: 14px;">
+									<span>好吃的汉堡</span>
+									<div class="bottom clearfix">
+										<time class="time">{{ new Date() }}</time>
+										<el-button type="text" class="button">操作按钮</el-button>
+									</div>
+								</div>
+							</el-card>
+						</el-col>
+						<el-col :span="8">
+							<el-card shadow="hover">
+								<img src="../images/hamburger.png" class="image">
+								<div style="padding: 14px;">
+									<span>好吃的汉堡</span>
+									<div class="bottom clearfix">
+										<time class="time">{{ new Date() }}</time>
+										<el-button type="text" class="button">操作按钮</el-button>
+									</div>
+								</div>
+							</el-card>
+						</el-col>
+					</el-row>
+				</div>
+				<div style="    padding-right: 10%;
+    padding-bottom: 10%;
+    background-color: rgb(248, 247, 248);">
+					<h3 style="text-align: right;-webkit-margin-after: .1em;">设计师品牌</h3>
+					<div id="line" style="width: 100%;height: 1px;background-color: #95989A;"></div>
+					<el-row :gutter="24" style="margin-left: 24px !important;">
+						<el-col :span="8">
+							<el-card shadow="hover">
+								<img src="../images/hamburger.png" class="image">
+								<div style="padding: 14px;">
+									<span>好吃的汉堡</span>
+									<div class="bottom clearfix">
+										<time class="time">{{ new Date() }}</time>
+										<el-button type="text" class="button">操作按钮</el-button>
+									</div>
+								</div>
+							</el-card>
+						</el-col>
+						<el-col :span="8">
+							<el-card shadow="hover">
+								<img src="../images/hamburger.png" class="image">
+								<div style="padding: 14px;">
+									<span>好吃的汉堡</span>
+									<div class="bottom clearfix">
+										<time class="time">{{ new Date() }}</time>
+										<el-button type="text" class="button">操作按钮</el-button>
+									</div>
+								</div>
+							</el-card>
+						</el-col>
+						<el-col :span="8">
+							<el-card shadow="hover">
+								<img src="../images/hamburger.png" class="image">
+								<div style="padding: 14px;">
+									<span>好吃的汉堡</span>
+									<div class="bottom clearfix">
+										<time class="time">{{ new Date() }}</time>
+										<el-button type="text" class="button">操作按钮</el-button>
+									</div>
+								</div>
+							</el-card>
+						</el-col>
+					</el-row>
+				</div>
+			</div>
+			<div class="box bottom"></div>
+		</div>
+		</div>
+		<script type="text/javascript" src="../js/libs/vue.min.js"></script>
+		<script type="text/javascript" src="../js/libs/elm.js"></script>
+		<script type="text/javascript" src="../js/libs/jquery.min.js"></script>
+		<script type="text/javascript">
+			//(function() {
+			window.onload = function() {
+				new Vue({
+					el: '#main',
+					data() {
+						return {
+							activeIndex2: 1
+						}
+					},
+					mounted() {
+						//document.getElementById('footer').style.height = (document.body.clientHeight - document.getElementById('header').clientHeight - document.getElementById('main2').clientHeight) + 'px';
+					},
+					methods: {
+						handleSelect(key, keyPath) {
+							console.log(key, keyPath);
+						},
+						ongClickDown() {
+							this.$nextTick(function() {
+								//document.getElementById('line').style = 'width: 100%;height: 1px;background-color: #95989A;'
+								$('html,body').animate({
+									scrollTop: $('.bottom').offset().top
+								}, 800);
+							})
+						}
+					}
+				})
+			}
+
+			//})()
+		</script>
+	</body>
+
+</html>

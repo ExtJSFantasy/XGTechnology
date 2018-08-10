@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>首页</title>
+		<link rel="stylesheet" href="css/elm.css" />
+		<link rel="stylesheet" href="css/hivideo.css" />
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background-color: #95989A;
+				font-family: "Helvetica Neue";
+			}
+			
+			.el-main {
+				padding: 0px;
+			}
+			
+			.main-wrap {
+				margin: 0 auto;
+				min-width: 320px;
+				/*max-width: 640px;*/
+				max-width: 100%;
+			}
+			
+			.main-wrap video {
+				width: 100%;
+			}
+			
+			#app {
+				height: 100%;
+			}
+			
+			.md-content {
+				width: 100%;
+				/*height: 100%;
+				position: relative;*/
+				background-color: #F8F7F8;
+			}
+			
+			.nabla:before {
+				content: '';
+				background: url('images/symbol-nabla.png') no-repeat left center;
+				/*兼容没测*/
+				position: absolute;
+				z-index: 2;
+				width: 32px;
+				height: 20px;
+				margin-left: -35px;
+			}
+			
+			p {
+				font-size: 12px;
+				color: #95989A;
+			}
+			
+			.md-all-content {
+				height: 80px !important;
+				position: relative;
+			}
+			
+			.md-title {
+				display: flex;
+				position: absolute;
+				height: 100%;
+				justify-content: center;
+				align-items: Center;
+			}
+			
+			.md-header-img {
+				height: 60px;
+			}
+			
+			.md-header-img:last-child {
+				margin-left: 10px;
+			}
+			
+			.md-height {
+				/*height: 100%;*/
+				padding-top: 5%;
+			}
+			
+			.md-slite-line {
+				width: 80%;
+				height: 1px;
+				background-color: #FFE100;
+				margin: auto;
+			}
+			
+			.md-down-content {
+				display: flex;
+				width: 80%;
+				margin: auto;
+			}
+			
+			.md-down-flex6 {
+				flex: 6;
+			}
+			
+			.md-down-flex2 {
+				flex: 2;
+			}
+			
+			.md-down-right {
+				height: 65px;
+				border: solid 1px;
+				border-left-color: #FFE100;
+				border-top-color: transparent;
+				border-bottom-color: transparent;
+				border-right-color: transparent;
+			}
+			
+			.md-down-bg {
+				width: 100%;
+				height: 35px;
+				background-color: #FFE100;
+			}
+			
+			.md-down-jugg {
+				height: 60px;
+				margin-left: 20px;
+			}
+			
+			.md-down-right-des {
+				margin-left: 20px;
+			}
+			
+			.md-go-home {
+				position: fixed;
+				width: 130px;
+				height: 25px;
+				right: 0px;
+				top: 430px;
+				right: 50px;
+				z-index: 1000;
+				background-color: #FFE100;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: Center;
+			}
+			
+			.md-go-home span {
+				font-size: 12px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<el-container>
+				<el-header class="md-all-content" id="header">
+					<div class="md-title">
+						<img src="images/plogo.png" class="md-header-img" />
+						<img src="images/index-logo.png" class="md-header-img" />
+					</div>
+				</el-header>
+				<el-main>
+					<div class="main-wrap" id="video">
+						<video ishivideo="true" autoplay="true" isrotate="false" autoHide="true" muted>
+							<source src="http://www.html5videoplayer.net/videos/madagascar3.mp4" type="video/mp4">
+						</video>
+						<div class="md-go-home" @click="onClickGoMain"><span>进入首页</span></div>
+					</div>
+					<div class="md-content" id="footer">
+						<div class="md-height">
+							<div class="md-slite-line"></div>
+							<div class="md-down-content">
+								<div class="md-down-flex6">
+									<div style="">
+										<div class="nabla">
+											熙瓜是谁
+											<p>
+												尽快哈是大号打电话黑金沙删除宣布才能执行
+											</p>
+										</div>
+										<div class="nabla">熙瓜要做什么
+											<p>
+												扩大了极大减少的垃圾收到了贷记卡设计的喀什假大空，安静的拉升阶段拉升阶段建设靠大家ask的家啊大家。大驾光临苏俄哦i润兴吹牛欸哦啊请问
+											</p>
+										</div>
+										<div class="nabla">熙瓜的理念
+											<p>了空间打开拉萨巨大空间的里的卡刷点卡是的卡刷点卡 的骄傲可是老大就爱上了大家。啊是多久啊了。宽带端口，圣诞节卡拉圣诞节氨基酸的啊爱的就阿婆i我呸觉得拉大距离，的卡拉就会狄拉克就对啦u而欧帕奇奥啊大家阿拉山口大家恶斗配到了看哈看啥看的哈客户觉得好看垃圾的卡大数据搭理我i未批，二u期间欧文u去外婆欸去巫婆二ui</p>
+										</div>
+									</div>
+								</div>
+								<div class="md-down-flex2">
+									<div class="md-down-right">
+										<div class="md-down-bg">
+											<img class="md-down-jugg" src="images/symbol-small-jugg.png" />
+										</div>
+									</div>
+									<p class="md-down-right-des">了卡拉圣诞节埃里克森大家拉萨大家卡是捷克大叔控卡达离开的卡达深刻的；啊打开；ask的</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</el-main>
+			</el-container>
+
+		</div>
+		<script type="text/javascript" src="js/libs/vue.min.js"></script>
+		<script type="text/javascript" src="js/libs/elm.js"></script>
+		<script type="text/javascript" src="js/hivideo.js"></script>
+		<script type="text/javascript">
+			(function() {
+				new Vue({
+					el: '#app',
+					data: function() {
+						return {
+							active: 1
+						}
+					},
+					mounted() {
+						console.log(`网页可见区域高:${document.body.clientHeight}`);
+						console.log(`网页可见区域高(包括边线的高):${document.body.offsetHeight}`);
+						console.log("网页正文全文高:" + document.body.scrollHeight);
+						console.log("屏幕分辨率的高:" + window.screen.height);
+						console.log("屏幕可用工作区高度:" + window.screen.availHeight);
+						console.log("网页被卷去的高:" + document.body.scrollTop);
+
+						//console.log(document.getElementById('video').clientHeight);
+						document.getElementById('footer').style.height = (document.body.clientHeight - document.getElementById('header').clientHeight - 400 - 5) + 'px';
+					},
+					methods: {
+						onClickGoMain() {
+							console.log(`gogogogo`)
+						}
+					}
+				})
+			})()
+		</script>
+	</body>
+
+</html>
