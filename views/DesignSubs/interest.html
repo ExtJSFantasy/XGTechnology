@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/elm.css" />
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background-color: #F8F7F8;
+			}
+			
+			.md-header {
+				min-height: 350px;
+				max-height: 450px;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.time {
+				font-size: 13px;
+				color: #999;
+			}
+			
+			.bottom {
+				margin-top: 13px;
+				line-height: 12px;
+			}
+			
+			.button {
+				padding: 0;
+				float: right;
+			}
+			
+			.image {
+				width: 100%;
+				display: block;
+			}
+			
+			.clearfix:before,
+			.clearfix:after {
+				display: table;
+				content: "";
+			}
+			
+			.clearfix:after {
+				clear: both
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="interest">
+			<div class="md-header">
+				<div>
+					<h1 style="#A2271D">情趣</h1>
+					<div style="width: 100%;">
+						<p style="width: 40%;margin: auto;">空间的垃圾狄拉克就是就卡了的空间刷卡老大阿拉斯加达拉斯的煎熬 答案觉得 安静的垃圾的垃圾的塑料袋我ueow</p>
+					</div>
+				</div>
+			</div>
+			<div class="md-content">
+				<div style="position: fixed;
+    top: 40%;
+    z-index: 100;display:none" :style="{'display':shortcut}">
+					<img style="height: 160px;" src="../../images/bg-1804.png" @click="onClickMenu" />
+				</div>
+				<div style="position: fixed;
+    top: 40%;
+    z-index: 100;display:none" :style="{'display':shortcutMemu}" class="xds">
+					<img style="height: 160px;" src="../../images/shortcutMenu.png" />
+				</div>
+				<el-row :gutter="8">
+					<el-col :span="12">
+						<el-card style="padding: 0px">
+							<img src="../../images/hamburger.png" class="image">
+							<div style="padding: 14px;">
+								<span>好吃的汉堡</span>
+								<div class="bottom clearfix">
+									<time class="time">{{ FormatDateYMDHMS2(new Date())}}</time>
+									<el-button type="text" class="button">操作按钮</el-button>
+								</div>
+							</div>
+						</el-card>
+					</el-col>
+					<el-col :span="12">
+						<el-card style="padding: 0px">
+							<img src="../../images/hamburger.png" class="image">
+							<div style="padding: 14px;">
+								<span>好吃的汉堡</span>
+								<div class="bottom clearfix">
+									<time class="time">{{ FormatDateYMDHMS2(new Date())}}</time>
+									<el-button type="text" class="button">操作按钮</el-button>
+								</div>
+							</div>
+						</el-card>
+					</el-col>
+					<el-col :span="12">
+						<el-card style="padding: 0px">
+							<img src="../../images/hamburger.png" class="image">
+							<div style="padding: 14px;">
+								<span>好吃的汉堡</span>
+								<div class="bottom clearfix">
+									<time class="time">{{ FormatDateYMDHMS2(new Date())}}</time>
+									<el-button type="text" class="button">操作按钮</el-button>
+								</div>
+							</div>
+						</el-card>
+					</el-col>
+				</el-row>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/libs/vue.min.js"></script>
+		<script type="text/javascript" src="../../js/libs/elm.js"></script>
+		<script type="text/javascript" src="../../js/libs/jquery.min.js"></script>
+		<script type="text/javascript" src="../../js/function.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el: '#interest',
+				data() {
+					return {
+						shortcut: 'none',
+						shortcutMemu: 'none'
+					}
+				},
+				mounted() {
+					var _this = this;
+					$(window).scroll(function() {
+						// 当滚动到最底部以上100像素时， 加载新内容
+						if($(document).height() - $(this).scrollTop() - $(this).height() < 600) {
+							/*if(flag) {
+								var $boxes = $(getList());
+								$container.append($boxes).masonry('appended', $boxes);
+							}*/
+							console.log(1111);
+							_this.shortcut = 'block'
+						}
+					});
+				},
+				methods: {
+					onClickMenu() {
+						this.shortcut = 'none'
+						this.shortcutMemu = 'block';
+						//this.animate('.' + 'xds', "bounceIn", 2, 3000);
+					},
+					animate(seletor, animation_name, count, delay) {
+						var target = document.querySelectorAll(seletor)
+						var timer = null;
+						timer = setInterval(function() {
+							target.forEach(function(x) {
+								x.className += " animated " + animation_name;
+								x.addEventListener("animationend", function() {
+									x.className = x.className.replace(" animated " +
+										animation_name, "");
+								});
+							})
+							count--;
+							if(count <= 0) {
+								clearInterval(timer);
+							}
+						}, delay)
+					},
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -14,8 +14,16 @@
 				height: 100%;
 				margin: 0;
 				padding: 0;
-				background-color: #95989A;
+				background-color: #F8F7F8;
 				font-family: "Helvetica Neue";
+			}
+			::-webkit-scrollbar {
+				width: 0;
+				/* 滚动条宽度为0 */
+				height: 0;
+				/* 滚动条高度为0 */
+				display: none;
+				/* 滚动条隐藏 */
 			}
 			
 			.el-main {
@@ -63,6 +71,7 @@
 			.md-all-content {
 				height: 80px !important;
 				position: relative;
+				background-color: #95989A;
 			}
 			
 			.md-title {
@@ -205,9 +214,10 @@
 			</el-container>
 
 		</div>
-		<script type="text/javascript" src="js/libs/vue.min.js" ></script>
+		<script type="text/javascript" src="js/libs/vue.min.js"></script>
 		<script type="text/javascript" src="js/libs/elm.js"></script>
 		<script type="text/javascript" src="js/hivideo.js"></script>
+		<script type="text/javascript" src="js/libs/mui.min.js" ></script>
 		<script type="text/javascript">
 			(function() {
 				new Vue({
@@ -218,19 +228,21 @@
 						}
 					},
 					mounted() {
+						mui.init();
 						console.log(`网页可见区域高:${document.body.clientHeight}`);
 						console.log(`网页可见区域高(包括边线的高):${document.body.offsetHeight}`);
 						console.log("网页正文全文高:" + document.body.scrollHeight);
 						console.log("屏幕分辨率的高:" + window.screen.height);
 						console.log("屏幕可用工作区高度:" + window.screen.availHeight);
 						console.log("网页被卷去的高:" + document.body.scrollTop);
-
-						//console.log(document.getElementById('video').clientHeight);
-						document.getElementById('footer').style.height = (document.body.clientHeight - document.getElementById('header').clientHeight - 400 - 5) + 'px';
 					},
 					methods: {
 						onClickGoMain() {
 							console.log(`gogogogo`)
+							mui.openWindow({
+								url:'views/home.html',
+								id:'home'
+							})
 						}
 					}
 				})

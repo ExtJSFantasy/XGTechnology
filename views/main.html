@@ -297,7 +297,7 @@
 
 	<body>
 		<div id="main" class="md-main">
-			<div id="header" class="md-main-display">
+			<!--<div id="header" class="md-main-display">
 				<div class="md-main-title">
 					<div class="md-main-title-left-logo">
 						<img :src="leftLogo" />
@@ -337,7 +337,7 @@
 						<img src="../images/search.png" />
 					</div>
 				</div>
-			</div>
+			</div>-->
 			<div id="main2" style="">
 				<div class="bg bg-blur"></div>
 				<div class="content content-front">发现生活的艰难，然后用设计产品去填满</div>
@@ -469,7 +469,7 @@
 							ongClickDown() {
 								this.$nextTick(function() {
 									$('html,body').animate({
-										scrollTop: $('.bottom').offset().top
+										scrollTop: $('.bottom').offset().top+300
 									}, 800);
 								})
 							},

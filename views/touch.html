@@ -243,16 +243,22 @@
 			.md-main-mid-tip-div img {
 				width: 60px;
 			}
+			
+			.md-main-header-bg {
+				height: 500px;
+				background-image: url('../images/bg-1803.png');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% 500px;
+			}
 		</style>
 	</head>
 
 	<body>
 		<div id="main" class="md-main">
-			<div style="height: 600px;background-image:url('../images/bg-1803.png');background-repeat: no-repeat;
-				background-position: center;
-				background-size: cover;">
+			<div class="md-main-header-bg">
 				<div id="header" class="md-main-display">
-					<div class="md-main-title">
+					<!--<div class="md-main-title">
 						<div class="md-main-title-left-logo">
 							<img :src="leftLogo" />
 						</div>
@@ -290,7 +296,7 @@
 						<div class="md-main-right">
 							<img src="../images/search.png" />
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 			<div>
@@ -310,12 +316,9 @@
 		<script type="text/javascript" src="../js/libs/elm.js"></script>
 		<script type="text/javascript" src="../js/libs/jquery.min.js"></script>
 		<script type="text/javascript" src="../js/function.js"></script>
-		<script type="text/javascript" src="../js/libs/mui.min.js" ></script>
+		<script type="text/javascript" src="../js/libs/mui.min.js"></script>
 		<script type="text/javascript">
 			(function() {
-				document.getElementById('interest').addEventListener('click',function(){
-								console.log(1111111);
-							})
 				window.onload = function() {
 					new Vue({
 						el: '#main',
