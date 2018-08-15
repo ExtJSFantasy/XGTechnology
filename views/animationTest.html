@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.test {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: relative;
+				animation: myfirst 5s linear 2s 1 normal forwards;
+				/* Firefox: */
+				-moz-animation: myfirst 5s linear 2s 1 normal forwards;
+				/* Safari and Chrome: */
+				-webkit-animation: myfirst 5s linear 2s 1 normal forwards;
+				/* Opera: */
+				-o-animation: myfirst 5s linear 2s 1 normal forwards;
+			}
+			
+			@keyframes myfirst {
+				0% {
+					background: red;
+					/*left: 0px;
+					top: 0px;*/
+				}
+				25% {
+					background: yellow;
+					width: 75px;
+					height: 75px;
+					/*left: 200px;
+					top: 0px;*/
+				}
+				50% {
+					background: blue;
+					width: 50px;
+					height: 50px;
+					/*left: 200px;
+					top: 200px;*/
+				}
+				75% {
+					background: green;
+					width: 25px;
+					height: 25px;
+					/*left: 0px;
+					top: 200px;*/
+				}
+				100% {
+					background: red;
+					width: 0;
+					height: 0;
+					/*left: 0px;
+					top: 0px;*/
+				}
+			}
+			
+			@-moz-keyframes myfirst
+			/* Firefox */
+			
+			{
+				0% {
+					background: red;
+					left: 0px;
+					top: 0px;
+				}
+				25% {
+					background: yellow;
+					left: 200px;
+					top: 0px;
+				}
+				50% {
+					background: blue;
+					left: 200px;
+					top: 200px;
+				}
+				75% {
+					background: green;
+					left: 0px;
+					top: 200px;
+				}
+				100% {
+					background: red;
+					left: 0px;
+					top: 0px;
+				}
+			}
+			
+			@-webkit-keyframes myfirst
+			/* Safari and Chrome */
+			
+			{
+				0% {
+					background: red;
+					left: 0px;
+					top: 0px;
+				}
+				25% {
+					background: yellow;
+					left: 200px;
+					top: 0px;
+				}
+				50% {
+					background: blue;
+					left: 200px;
+					top: 200px;
+				}
+				75% {
+					background: green;
+					left: 0px;
+					top: 200px;
+				}
+				100% {
+					background: red;
+					left: 0px;
+					top: 0px;
+				}
+			}
+			
+			@-o-keyframes myfirst
+			/* Opera */
+			
+			{
+				0% {
+					background: red;
+					left: 0px;
+					top: 0px;
+				}
+				25% {
+					background: yellow;
+					left: 200px;
+					top: 0px;
+				}
+				50% {
+					background: blue;
+					left: 200px;
+					top: 200px;
+				}
+				75% {
+					background: green;
+					left: 0px;
+					top: 200px;
+				}
+				100% {
+					background: red;
+					left: 0px;
+					top: 0px;
+				}
+			}
+			
+			.test2 {
+				width: 0px;
+				height: 0px;
+				background: red;
+				position: relative;
+				/* Safari 和 Chrome */
+				animation: myfirst2 5s linear 5s 1 normal forwards;
+				/* Firefox: */
+				-moz-animation: myfirst2 5s linear 5s 1 normal forwards;
+				/* Safari and Chrome: */
+				-webkit-animation: myfirst2 5s linear 5s 1 normal forwards;
+				/* Opera: */
+				-o-animation: myfirst2 5s linear 5s 1 normal forwards;
+			}
+			
+			@keyframes myfirst2 {
+				0% {
+					background: red;
+					width: 0;
+					height: 0;
+				}
+				25% {
+					background: yellow;
+					width: 25px;
+					height: 25px;
+				}
+				50% {
+					background: blue;
+					width: 50px;
+					height: 50px;
+				}
+				75% {
+					background: green;
+					width: 75px;
+					height: 75px;
+				}
+				100% {
+					background: red;
+					width: 100px;
+					height: 100px;
+				}
+			}
+			
+			@-moz-keyframes myfirst2
+			/* Firefox */
+			
+			{
+				0% {
+					background: red;
+					width: 0;
+					height: 0;
+				}
+				25% {
+					background: yellow;
+					width: 25px;
+					height: 25px;
+				}
+				50% {
+					background: blue;
+					width: 50px;
+					height: 50px;
+				}
+				75% {
+					background: green;
+					width: 75px;
+					height: 75px;
+				}
+				100% {
+					background: red;
+					width: 100px;
+					height: 100px;
+				}
+			}
+			
+			@-webkit-keyframes myfirst2
+			/* Safari and Chrome */
+			
+			{
+				0% {
+					background: red;
+					width: 0;
+					height: 0;
+				}
+				25% {
+					background: yellow;
+					width: 25px;
+					height: 25px;
+				}
+				50% {
+					background: blue;
+					width: 50px;
+					height: 50px;
+				}
+				75% {
+					background: green;
+					width: 75px;
+					height: 75px;
+				}
+				100% {
+					background: red;
+					width: 100px;
+					height: 100px;
+				}
+			}
+			
+			@-o-keyframes myfirst2
+			/* Opera */
+			
+			{
+				0% {
+					background: red;
+					width: 0;
+					height: 0;
+				}
+				25% {
+					background: yellow;
+					width: 25px;
+					height: 25px;
+				}
+				50% {
+					background: blue;
+					width: 50px;
+					height: 50px;
+				}
+				75% {
+					background: green;
+					width: 75px;
+					height: 75px;
+				}
+				100% {
+					background: red;
+					width: 100px;
+					height: 100px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="testNew">
+			<div :class="{'test':isTest}"></div>
+			<div :class="{'test2':isShow}"></div>
+			<button type="button" @click="start">开始第一个动画</button>
+		</div>
+		<script type="text/javascript" src="../js/libs/vue.min.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el: '#testNew',
+				data() {
+					return {
+						isShow: false,
+						isTest: false
+					}
+				},
+				mounted() {},
+				methods: {
+					start() {
+						this.isTest = true
+						this.isShow = true
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

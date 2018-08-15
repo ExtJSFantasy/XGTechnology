@@ -32,37 +32,12 @@
 			.md-iframe {
 				width: 100%;
 				height: 100%;
-				margin-top: 10px;
-			}
-			
-			.el-menu--horizontal {
-				background-color: #F8F7F8 !important;
-				border-right: none;
-				border-bottom: solid 1px transparent;
-			}
-			
-			.el-menu--horizontal>.el-submenu .el-submenu__title {
-				color: rgb(149, 152, 154) !important;
-				background-color: rgb(248, 247, 248) !important;
-				border-bottom-color: rgb(149, 152, 154) !important;
-				/*background-color: transparent !important;*/
-				border-bottom: 1px solid transparent;
-			}
-			
-			.el-menu--horizontal>.el-menu-item {
-				color: rgb(149, 152, 154) !important;
-				background-color: rgb(248, 247, 248) !important;
-				border-bottom: 1px solid transparent;
-				border-bottom-color: rgb(149, 152, 154) !important;
-				/*background-color: transparent !important;//＃4F5153*/
-			}
-			
-			.el-submenu__title i {
-				color: transparent;
+				/*margin-top: 10px;*/
+				border-width: 0px;
 			}
 			
 			.bg {
-				background: url('../images/main-logo1.png');
+				/*background: url('../images/main-logo1.png');*/
 				height: 600px;
 				text-align: center;
 				line-height: 600px;
@@ -91,33 +66,6 @@
 				font-size: 40px;
 				color: #F8F7F8;
 				font-weight: lighter;
-			}
-			
-			.el-row {
-				margin-left: 0px !important;
-				margin-right: 0px !important;
-				margin-top: 10px;
-			}
-			/*.el-col-8 {
-				padding-left: 0 !important;
-			}*/
-			
-			.el-col-8 {
-				/*padding-right: 0 !important;*/
-			}
-			
-			.el-menu-item,
-			.el-submenu__title {
-				white-space: inherit;
-			}
-			
-			.el-menu--horizontal .el-menu .el-menu-item,
-			.el-menu--horizontal .el-menu .el-submenu__title {
-				height: 100%;
-			}
-			
-			.el-menu--popup {
-				padding: 0;
 			}
 			
 			.time {
@@ -167,6 +115,7 @@
 			
 			.md-main-display {
 				display: flex;
+				min-height: 70px;
 			}
 			
 			.md-main-title {
@@ -176,8 +125,13 @@
 			
 			.md-main-title-left-logo {
 				display: flex;
+				height: 100%;
 				justify-content: center;
 				align-items: center;
+			}
+			
+			.md-main-title-left-logoChange {
+				background-color: rgb(230, 228, 230);
 			}
 			
 			.md-main-title-left-logo img {
@@ -186,6 +140,7 @@
 			
 			.md-main-mid {
 				flex: 5;
+				width: 100%;
 			}
 			
 			.md-main-mid-display {
@@ -224,14 +179,13 @@
 				padding: 0;
 				padding-left: 5px;
 			}
-			
-			.md-main-mid-inner-color1 {
+			/*.md-main-mid-inner-color1 {
 				background-color: #A2271D !important;
 			}
 			
 			.md-main-mid-inner-color2 {
 				background-color: #029245 !important;
-			}
+			}*/
 			
 			.md-main-right {
 				display: flex;
@@ -257,50 +211,358 @@
 			.md-main-mid-tip-div img {
 				width: 60px;
 			}
+			
+			.md-main-mid-inner {
+				/*max-width: 200px;*/
+				clear: left;
+				display: block;
+				line-height: 24px !important;
+				padding: 0;
+				padding-left: 5px;
+			}
+			
+			.md-main-mid-inner-color1 {
+				background-color: #A2271D !important;
+			}
+			
+			.md-main-mid-inner-color2 {
+				height: 100%;
+				width: 100%;
+				background-color: #029245 !important;
+			}
+			
+			.xds1:hover {
+				border-bottom: 1px solid red
+			}
+			
+			.xds123:hover {
+				line-height: 60px;
+				background-color: rgb(67, 74, 80);
+			}
+			/*.el-dropdown-menu__item--divided:before,
+			.el-menu,
+			.el-menu--horizontal>.el-menu-item:not(.is-disabled):focus,
+			.el-menu--horizontal>.el-menu-item:not(.is-disabled):hover,
+			.el-menu--horizontal>.el-submenu .el-submenu__title:hover {
+				background-color: red !important;
+			}*/
+			
+			.xdsnew {
+				background-color: rgb(67, 74, 80);
+			}
+			
+			.xds1231 {
+				display: none;
+				position: fixed;
+				/*width: 33.333%;*/
+				/*margin-top: 10px;*/
+				text-align: center;
+			}
+			
+			.xds12311 {
+				display: block !important;
+			}
+			
+			.changBg {
+				line-height: 60px;
+				background-color: rgb(67, 74, 80);
+			}
+			
+			.md-p-border {
+				position: relative;
+				width: auto;
+				height: auto;
+				border-bottom: 1px solid #A2271D;
+				color: #A2271D;
+			}
+			
+			.md-p-border1 {
+				position: relative;
+				width: auto;
+				height: auto;
+				border-bottom: 1px solid #029245;
+				color: #029245;
+			}
+			
+			.md-p-border2 {
+				border-bottom: 1px solid red;
+			}
+			
+			.md-p-border::after {
+				content: '';
+				position: absolute;
+				width: 20vw;
+				height: 100%;
+				background: transparent;
+				border-bottom: solid 1px #A2271D;
+				pointer-events: none;
+			}
+			
+			.md-p-border1::after {
+				content: '';
+				position: absolute;
+				width: 20vw;
+				height: 100%;
+				background: transparent;
+				border-bottom: solid 1px #029245;
+				pointer-events: none;
+			}
+			/*--------------------------开始------------------------------*/
+			
+			@keyframes lineIn {
+				from {
+					width: 0;
+				}
+				to {
+					width: 100%;
+				}
+			}
+			/*适应于火狐浏览器*/
+			
+			@-moz-keyframes lineIn {
+				from {
+					width: 0;
+				}
+				to {
+					width: 100%;
+				}
+			}
+			/*适应于Opera（欧朋）浏览器*/
+			
+			@-o-keyframes lineIn {
+				from {
+					width: 0;
+				}
+				to {
+					width: 100%;
+				}
+			}
+			/*适应于谷歌浏览器*/
+			
+			@-webkit-keyframes lineIn {
+				from {
+					width: 0;
+				}
+				to {
+					width: 100%;
+				}
+			}
+			/*---------------------------退回------------------------------*/
+			
+			@keyframes lineOff {
+				from {
+					width: 100%;
+				}
+				to {
+					width: 0;
+				}
+			}
+			
+			@-moz-keyframes lineOff {
+				from {
+					width: 100%;
+				}
+				to {
+					width: 0;
+				}
+			}
+			
+			@-o-keyframes lineOff {
+				from {
+					width: 100%;
+				}
+				to {
+					width: 0;
+				}
+			}
+			
+			@-webkit-keyframes lineOff {
+				from {
+					width: 100%;
+				}
+				to {
+					width: 0;
+				}
+			}
+			
+			.bg {
+				background-color: #95989A;
+			}
+			
+			.selfN:hover {
+				color: #FFE100;
+			}
+			
+			.md-navb {
+				width: 600px;
+				margin: auto;
+				min-height: 60px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				background-color: transparent;
+			}
+			
+			.md-span-border {
+				border-bottom: 1px solid #E6E4E6;
+				padding-bottom: 10px;
+				padding-left: 10px;
+				padding-right: 10px;
+				color: #F8F7F8;
+				font-size: 24px;
+			}
+			
+			.md-span-borderChange {
+				border-bottom: 1px solid #95989A !important;
+				color: #95989A !important;
+			}
+			
+			.md-span-borderChange:hover {
+				border-bottom: 1px solid #E8CC05 !important;
+				color: #F8F7F8 !important;
+			}
+			/*顶部左侧图片大小*/
+			
+			.md-header-img-size {
+				width: 180px;
+			}
+			
+			.item-flex1 {
+				flex: 1;
+			}
+			
+			.md-nav-hover {
+				display: flex;
+				width: 100%;
+				justify-content: center;
+			}
+			
+			.md-nav-hover-center {
+				width: 600px;
+				margin: auto;
+			}
+			
+			.item-dispay {
+				display: flex;
+			}
+			
+			.md-nav-hover-item1 {
+				flex: 1;
+				background-color: rgb(67, 74, 80);
+			}
+			
+			.md-nav-hover-item1-center {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				color: #F8F7F8;
+			}
+			
+			.item-color {
+				color: #F8F7F8;
+			}
+			
+			.md-nav-hover-item1-details {
+				flex: 1;
+				max-width: 200px;
+				margin-top: 10px;
+			}
+			
+			.md-nav-hover-item1-details-color {
+				display: flex;
+				height: 100%;
+				justify-content: center;
+				align-items: center;
+				color: #F8F7F8;
+			}
+			
+			.md-nav-hover-item1-details-color-red {
+				background-color: #A2271D;
+			}
+			
+			.md-nav-hover-item1-details-color-green {
+				background-color: #029245;
+			}
+			
+			.md-natural {
+				flex: 1;
+				background-color: rgb(67, 74, 80);
+			}
+			
+			.md-search-size {
+				font-size: 45px;
+				color: #F8F7F8;
+			}
+			
+			.md-item-active {
+				border-bottom: 2px solid #FFE100 !important;
+			}
 		</style>
 	</head>
 
 	<body>
 		<div id="home">
-			<div id="header" class="md-main-display">
-				<div class="md-main-title">
+			<div id="header" class="md-main-display" :style="{'background-color': isChangeBg}">
+				<div class="md-main-title" :style="{'background-color':isChangeBg2}">
 					<div class="md-main-title-left-logo" @click="goMain">
-						<img :src="leftLogo" />
+						<img :src="leftLogo" class="md-header-img-size" />
 					</div>
 				</div>
-				<div class="md-main-mid">
-					<el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#95989A" text-color="#F8F7F8" active-text-color="#F8F7F8" style="display: flex;padding-left: 55px;">
-						<el-submenu index="1" class="md-main-mid-bg md-main-mid-one">
-							<template slot="title" style="">Design Mind</template>
-							<el-submenu index="1-1">
-								<div slot="title" @click="onClickBigType('interest')">情趣</div>
-								<el-menu-item index="1-1-1" class="md-main-mid-inner md-main-mid-inner-color1">对自己好一点，买体面的腕表、吃精致的美食,安静的辣椒水的垃圾达拉斯的加拉受打击了按时打开拉萨扩大上课大大撒大撒大撒大撒大撒大撒大撒大撒法的规定</el-menu-item>
-							</el-submenu>
-							<el-submenu index="1-2">
-								<div slot="title" @click="onClickBigType('儿童医疗器械')">儿童医疗器械</div>
-								<el-menu-item index="1-2-1" class="md-main-mid-inner md-main-mid-inner-color2">对自己好一点，买体面的腕表、吃精致的美食,安静的辣椒水的垃圾达拉斯的加拉受打击了按时打开拉萨扩大上课大大撒大撒大撒大撒大撒大撒大撒大撒法的规定</el-menu-item>
-							</el-submenu>
-							<el-menu-item index="1-3" @click="onClickBigType('电子产品')">电子产品</el-menu-item>
-							<el-menu-item index="1-4" @click="onClickBigType('其它')">其它</el-menu-item>
-						</el-submenu>
-						<el-submenu index="2" class="md-main-mid-bg md-main-mid-two">
-							<template slot="title" style="">Our Work</template>
-							<el-menu-item index="2-1" @click="onClickBigType('自然野')">自然野</el-menu-item>
-							<el-menu-item index="2-2" @click="onClickBigType('其它')">其它</el-menu-item>
-							<el-submenu index="2-3">
-								<template slot="title">选项4</template>
-								<el-menu-item index="2-3-1">选项1</el-menu-item>
-								<el-menu-item index="2-3-2">选项2</el-menu-item>
-								<el-menu-item index="2-3-3">选项3</el-menu-item>
-							</el-submenu>
-						</el-submenu>
-						<el-menu-item index="3" class="md-main-mid-bg md-main-mid-three" @click="onClickBigType('touch')">Get in Touch</el-menu-item>
-					</el-menu>
+				<div id="nav" class="md-main-mid">
+					<div class="md-navb">
+						<div class="xds123 item-flex1" :class="{'changBg':isBgChange}" @mouseover="onMouseover">
+							<span class="md-span-border" :class="{'md-span-borderChange':isChangBgone}">理念</span>
+						</div>
+						<div class="xds123 item-flex1" :class="{'changBg':isBgChange1}" @mouseover="onMouseover1"><span class="md-span-border" :class="{'md-span-borderChange':isChangBgone}">品牌</span></div>
+						<div class="xds123 item-flex1" @mouseover="onMouseover2" @click="onClickBigType('touch')"><span class="md-span-border" :class="{'md-span-borderChange':isChangBgone,'md-item-active':isActive1}">联系我们</span></div>
+
+					</div>
+					<div class="md-nav-hover">
+						<div class="xds1231 md-nav-hover-center" :style="{'display':isShow1}" id="one">
+							<div class="item-dispay" @mouseleave="onMouseOut">
+								<div class="md-nav-hover-item1">
+									<p @mouseover="onMouseoverInner" class="md-nav-hover-item1-center" @click="onClickBigType('interest')"><span :class="{'md-p-border':showBoder1}">情趣</span></p>
+									<p @mouseover="onMouseoverInner1" class="md-nav-hover-item1-center"><span :class="{'md-p-border1':showBoder2}">儿童医疗器械</span></p>
+									<p @mouseover="onMouseoverInner2" class="item-color"><span class="selfN">电子产品</span></p>
+									<p @mouseover="onMouseoverInner2" class="item-color"><span class="selfN">其它</span></p>
+								</div>
+								<div class="md-nav-hover-item1-details" :class="{'xdsnew':isXdsInner}">
+									<div v-show="isXdsInner1" class="md-nav-hover-item1-details-color md-nav-hover-item1-details-color-red">
+										<p v-text="interestone"></p>
+									</div>
+									<div v-show="isXdsInner2" class="md-nav-hover-item1-details-color md-nav-hover-item1-details-color-green">
+										<p v-text="interesttwo"></p>
+									</div>
+									<!--<div v-show="isXdsInner3" style="display: flex;height:100%;justify-content: center;align-items: center;">
+							<p>了解到拉丝机大量收集大量</p>
+						</div>-->
+								</div>
+								<div class="item-flex1">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="md-nav-hover">
+						<div class="xds1231 md-nav-hover-center" :style="{'display':isShow2}">
+							<div class="item-dispay" @mouseleave="onMouseOut1">
+								<div class="item-flex1">
+								</div>
+								<div class="md-natural">
+									<p class="item-color"><span class="selfN" @click="onClickBigType('natural')">自来野</span></p>
+									<p class="item-color"><span class="selfN">其它</span></p>
+								</div>
+								<div class="item-flex1">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="md-main-title">
 					<div class="md-main-right">
 						<!--<img src="../images/search.png" />-->
-						<i class="el-icon-search" style="font-size: 45px;color: rgb(149, 152, 154);"></i>
+						<i class="el-icon-search md-search-size" :style="{'color':isChangeBg3}"></i>
 					</div>
 				</div>
 			</div>
@@ -316,11 +578,72 @@
 					return {
 						activeIndex2: 1,
 						leftLogo: '../images/main-logo1.png',
-						goPath: 'main.html'
+						goPath: 'main.html',
+						primarytitleone: '',
+						primarytitletwo: '',
+						primarytitlethree: '',
+						primarytitlefour: '',
+						interestone: '',
+						interesttwo: '',
+						workone: '自来野',
+						worktwo: '其它',
+						isChangeBg: '#95989A',
+						isChangeBg2: '#95989A',
+						isChangeBg3: '',
+
+						isChangBgone: false,
+
+						isXds: false,
+						isShow1: 'none',
+						isShow2: 'none',
+						isShow3: 'none',
+						isBgChange: false,
+						isBgChange1: false,
+						isBgChange2: false,
+
+						isXdsInner: false,
+						isXdsInner1: false,
+						isXdsInner2: false,
+						isXdsInner3: false,
+
+						showBoder1: false,
+						showBoder2: false,
+						showBoder3: false,
+						isActive1:false
 					}
 				},
 				mounted() {
+					var _this = this;
+					//window
+					/*window.onbeforeunload = function() //author: meizz   
+					{
+						var n = window.event.screenX - window.screenLeft;
+						var b = n > document.documentElement.scrollWidth - 20;
+						if(b && window.event.clientY < 0 || window.event.altKey) {
+							alert("是关闭而非刷新");
+							window.event.returnValue = "1111"; //这里可以放置你想做的操作代码   
+						}
+					}*/
+					//需要记录点击的路径，当F5时，展示最后一次操作的界面
 					document.getElementById('home').style.height = (document.body.clientHeight - document.getElementById('header').clientHeight) + 'px';
+					this.$nextTick(() => {
+						this.primarytitleone = '情趣',
+							this.primarytitletwo = '儿童医疗器械',
+							this.primarytitlethree = '电子产品',
+							this.primarytitlefour = '其它',
+							this.interestone = '对自己好一点，买体面的腕表、吃精致的美食,安静的辣椒水的垃圾达拉斯的加拉受打击了按时打开拉萨扩大上课大大撒大撒大撒大撒大撒大撒大撒大撒法的规定',
+							this.interesttwo = '对自己好一点，买体面的腕表、吃精致的美食,安静的辣椒水的垃圾达拉斯的加拉受打击了按时打开拉萨扩大上课大大撒大撒大撒大撒大撒大撒大撒大撒法的规定'
+					})
+					let i = 1;
+					let _setInterval = setInterval(function() {
+						_this.leftLogo = "../images/main-logo" + i + ".png";
+						i++
+						if(i == 3) {
+							i = 1
+						}
+						_setInterval = null
+						clearInterval()
+					}, 2000);
 				},
 				methods: {
 					handleSelect(key, keyPath) {
@@ -333,10 +656,26 @@
 						var _this = this;
 						switch(type) {
 							case 'touch':
+								_this.isActive1 = true
+								_this.isChangeBg2 = 'transparent'
 								_this.goPath = 'touch.html?' + '/touch'
 								break;
 							case 'interest':
+								_this.isActive1 = false
+								_this.isChangeBg = '#F8F7F8'
+								_this.isChangeBg2 = 'transparent'
+								_this.isChangBgone = true;
+								_this.isChangeBg3 = '#95989A !important'
+								_this.onMouseOut()
 								_this.goPath = 'DesignSubs/interest.html?' + '/interest'
+								break;
+							case 'natural':
+								_this.isActive1 = false
+								_this.isChangeBg = '#F8F7F8'
+								_this.isChangeBg2 = '#E6E4E6'
+								_this.isChangBgone = true;
+								_this.onMouseOut1()
+								_this.goPath = 'OurSubs/NaturalWild.html?' + '/NaturalWild'
 								break;
 							default:
 								break;
@@ -345,6 +684,93 @@
 					goMain() {
 						//this.goPath = 'main.html?'+'/main'
 						window.location.reload(true)
+					},
+					onMouseover() {
+						this.isShow1 = 'block'
+						this.isShow2 = 'none'
+						this.isShow3 = 'none'
+						this.isBgChange = true
+						this.isBgChange1 = false
+						this.isBgChange2 = false
+						this.isXdsInner = false
+						console.log(`11111`)
+					},
+					onMouseover1() {
+						this.isShow2 = 'block'
+						this.isShow1 = 'none'
+						this.isShow3 = 'none'
+						this.isBgChange1 = true
+						this.isBgChange = false
+						this.isBgChange2 = false
+						this.isXdsInner = false
+						console.log(`11111`)
+					},
+					onMouseover2() {
+						this.isShow3 = 'block'
+						this.isShow2 = 'none'
+						this.isShow1 = 'none'
+						this.isBgChange2 = true
+						this.isBgChange1 = false
+						this.isBgChange = false
+						this.isXdsInner = false
+						console.log(`11111`)
+					},
+					onMouseOut() {
+						this.isShow1 = 'none'
+						this.isBgChange = false
+						this.showBoder1 = false
+						this.showBoder2 = false
+						this.showBoder3 = false
+
+						this.isXdsInner1 = false
+						this.isXdsInner2 = false
+						this.isXdsInner3 = false
+						console.log(`2324234`);
+					},
+					onMouseOut1() {
+						this.isShow2 = 'none'
+						this.isBgChange1 = false
+					},
+					onMouseOut2() {
+						this.isShow3 = 'none'
+						this.isBgChange2 = false
+					},
+					onMouseoverInner() {
+						this.showBoder1 = true
+						this.showBoder2 = false
+						this.showBoder3 = false
+
+						this.isXdsInner = true
+						this.isXdsInner1 = true
+						this.isXdsInner2 = false
+						this.isXdsInner3 = false
+					},
+					onMouseoverInner1() {
+						this.showBoder1 = false
+						this.showBoder2 = true
+						this.showBoder3 = false
+						this.isXdsInner = true
+						this.isXdsInner1 = false
+						this.isXdsInner2 = true
+						this.isXdsInner3 = false
+					},
+					onMouseoverInner2() {
+						/*this.showBoder1 = false
+						this.showBoder2 = false
+						this.showBoder3 = true
+
+						this.isXdsInner = true
+						this.isXdsInner1 = false
+						this.isXdsInner2 = false
+						this.isXdsInner3 = true*/
+						this.showBoder1 = false
+						this.showBoder2 = false
+						this.showBoder3 = false
+
+						this.isXdsInner = false
+						this.isXdsInner1 = false
+						this.isXdsInner2 = false
+						this.isXdsInner3 = false
 					}
 				}
 			})

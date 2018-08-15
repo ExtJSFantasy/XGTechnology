@@ -17,6 +17,7 @@
 				background-color: #F8F7F8;
 				font-family: "Helvetica Neue";
 			}
+			
 			::-webkit-scrollbar {
 				width: 0;
 				/* 滚动条宽度为0 */
@@ -172,10 +173,12 @@
 				</el-header>
 				<el-main>
 					<div class="main-wrap" id="video">
-						<video ishivideo="true" autoplay="true" isrotate="false" autoHide="true" muted>
+						<video ishivideo="true" autoplay="true" isrotate="false" autoHide="true">
 							<source src="http://www.html5videoplayer.net/videos/madagascar3.mp4" type="video/mp4">
 						</video>
-						<div class="md-go-home" @click="onClickGoMain"><span>进入首页</span></div>
+						<div class="md-go-home" @click="onClickGoMain">
+							<a>进入首页</a>
+						</div>
 					</div>
 					<div class="md-content" id="footer">
 						<div class="md-height">
@@ -217,7 +220,7 @@
 		<script type="text/javascript" src="js/libs/vue.min.js"></script>
 		<script type="text/javascript" src="js/libs/elm.js"></script>
 		<script type="text/javascript" src="js/hivideo.js"></script>
-		<script type="text/javascript" src="js/libs/mui.min.js" ></script>
+		<script type="text/javascript" src="js/libs/mui.min.js"></script>
 		<script type="text/javascript">
 			(function() {
 				new Vue({
@@ -228,20 +231,43 @@
 						}
 					},
 					mounted() {
-						mui.init();
-						console.log(`网页可见区域高:${document.body.clientHeight}`);
-						console.log(`网页可见区域高(包括边线的高):${document.body.offsetHeight}`);
-						console.log("网页正文全文高:" + document.body.scrollHeight);
-						console.log("屏幕分辨率的高:" + window.screen.height);
-						console.log("屏幕可用工作区高度:" + window.screen.availHeight);
-						console.log("网页被卷去的高:" + document.body.scrollTop);
+						//window
+						/*window.onbeforeunload = function() //author: meizz   
+						{
+							var n = window.event.screenX - window.screenLeft;
+							var b = n > document.documentElement.scrollWidth - 20;
+							if(b && window.event.clientY < 0 || window.event.altKey) {
+								alert("是关闭而非刷新");
+								window.event.returnValue = "1111"; //这里可以放置你想做的操作代码   
+							}
+						}*/
+						mui.init({
+							preloadPages: [{
+									url: 'views/home.html',
+									id: 'home'
+								},
+								{
+									url: 'DesignSubs/interest.html',
+									id: 'interest'
+								},
+								{
+									url: 'OueSubs/NaturalWild.html',
+									id: 'NaturalWild'
+								},
+								{
+									url: 'views/main.html',
+									id: 'main'
+								}
+							],
+							preloadLimit: 5 //预加载窗口数量限制(一旦超出,先进先出)默认不限制
+						})
 					},
 					methods: {
 						onClickGoMain() {
 							console.log(`gogogogo`)
 							mui.openWindow({
-								url:'views/home.html',
-								id:'home'
+								url: 'views/home.html',
+								id: 'home'
 							})
 						}
 					}

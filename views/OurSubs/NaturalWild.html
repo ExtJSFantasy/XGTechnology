@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/elm.css" />
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background-color: #F8F7F8;
+				font-family: "Helvetica Neue";
+			}
+			
+			::-webkit-scrollbar {
+				width: 0;
+				/* 滚动条宽度为0 */
+				height: 0;
+				/* 滚动条高度为0 */
+				display: none;
+				/* 滚动条隐藏 */
+			}
+			
+			.selfImg {
+				position: absolute;
+				left: 55px;
+				bottom: 0px;
+				font-size: 18px;
+				font-weight: 600;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wild" style="width: 100%;height: 100%;">
+			<div style="display: flex;height: 100%;width: 100%;">
+				<div style="flex: 2;background-color: #E6E4E6;">
+					<div style="display:flex;position: relative;margin: 40px 15px 0px 15px;">
+						<img style="width: 50px;height: 50px;background: #A2271D;" src="../../images/naturaone.png" />
+						<span class="selfImg">自然野</span>
+					</div>
+					<p style="margin: 10px 15px 0px 15px; ">就拉斯基的拉丁江岸粮食的来得及萨拉大家阿斯利康大家觉得手拉手巨大拉德斯基拉萨大家啊欧文u请我</p>
+				</div>
+				<div style="flex: 7;">
+					<div style="display: flex;max-height: 300px;min-height: 200px;margin: 40px 15px 0px 15px;">
+						<div style="flex: 1;border: solid 1px red;border-right-color: transparent;"></div>
+						<div style="flex: 1;border: solid 1px red;"></div>
+					</div>
+					<div style="border: solid 1px red;min-height: 200px;margin: 20px 15px 0px 15px;"></div>
+					<div style="border: solid 1px red;min-height: 200px;margin: 20px 15px 0px 15px;"></div>
+					<!--<div style="border: solid 1px red;min-height: 200px;margin: 20px 15px 0px 15px;"></div>-->
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/libs/vue.min.js"></script>
+		<script type="text/javascript" src="../../js/libs/elm.js"></script>
+		<script type="text/javascript" src="../../js/function.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el: '#wild',
+				data() {
+					return {
+
+					}
+				},
+				mounted() {},
+				methods: {
+
+				}
+			})
+		</script>
+	</body>
+
+</html>

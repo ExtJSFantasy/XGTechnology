@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/elm.css" />
+		<style type="text/css">
+			html,
+			body {
+				height: 100%;
+				margin: 0px;
+				font-family: "Helvetica Neue";
+			}
+			
+			.el-menu--horizontal>.el-menu-item {
+				line-height: 40px;
+			}
+			
+			.el-submenu__title i {
+				color: transparent;
+			}
+			
+			.el-menu--horizontal>.el-submenu .el-submenu__title {
+				line-height: 40px;
+			}
+			
+			.el-menu--popup-bottom-start {
+				margin-top: 0px;
+			}
+			
+			.el-menu--collapse .el-menu .el-submenu,
+			.el-menu--popup {
+				min-width: 110px;
+				background-color: rgb(67, 74, 80) !important;
+			}
+			
+			.el-menu--popup {
+				border-radius: 0px;
+			}
+			
+			.el-menu--horizontal .el-menu .el-menu-item,
+			.el-menu--horizontal .el-menu .el-submenu__title {
+				height: 100%;
+				padding: 0;
+				text-align: center;
+				background-color: rgb(67, 74, 80) !important;
+			}
+			
+			.el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
+				background-color: transparent !important;
+				border-bottom-color: transparent !important;
+				color: rgb(255, 208, 75) !important;
+				color: #303133 !important;
+			}
+			
+			.el-menu--horizontal>.el-menu-item.is-active {
+				background-color: transparent !important;
+				border-bottom-color: transparent !important;
+				color: rgb(255, 208, 75) !important;
+				color: #303133 !important;
+			}
+			
+			.el-menu--popup-right-start {
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+			
+			.el-menu--popup {
+				padding: 0px 0;
+				-webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, .1);
+				box-shadow: 0 0px 0px 0 transparent;
+			}
+			
+			.el-submenu__title {
+				padding: 0 0px;
+			}
+			
+			.md-main-mid-inner {
+				/*max-width: 200px;*/
+				clear: left;
+				display: block;
+				line-height: 24px !important;
+				padding: 0;
+				padding-left: 5px;
+			}
+			
+			.md-main-mid-inner-color1 {
+				background-color: #A2271D !important;
+			}
+			
+			.md-main-mid-inner-color2 {
+				height: 100%;
+				width: 100%;
+				background-color: #029245 !important;
+			}
+			
+			.xds1:hover {
+				border-bottom: 1px solid red
+			}
+			
+			.xds123:hover {
+				line-height: 60px;
+				background-color: rgb(67, 74, 80);
+			}
+			/*.el-dropdown-menu__item--divided:before,
+			.el-menu,
+			.el-menu--horizontal>.el-menu-item:not(.is-disabled):focus,
+			.el-menu--horizontal>.el-menu-item:not(.is-disabled):hover,
+			.el-menu--horizontal>.el-submenu .el-submenu__title:hover {
+				background-color: red !important;
+			}*/
+			
+			.xdsnew {
+				background-color: rgb(67, 74, 80);
+			}
+			
+			.xds1231 {
+				width: 100%;
+				display: none;
+				position: fixed;
+				/*width: 33.333%;*/
+				/*margin-top: 10px;*/
+				text-align: center;
+			}
+			
+			.xds12311 {
+				display: block !important;
+			}
+			
+			.changBg {
+				line-height: 60px;
+				background-color: rgb(67, 74, 80);
+			}
+			
+			.md-p-border {
+				position: relative;
+				width: auto;
+				height: auto;
+				border-bottom: 1px solid red;
+				color: red;
+			}
+			
+			.md-p-border1 {
+				position: relative;
+				width: auto;
+				height: auto;
+				border-bottom: 1px solid #029245;
+				color: #029245;
+			}
+			
+			.md-p-border2 {
+				border-bottom: 1px solid red;
+			}
+			
+			.md-p-border::after {
+				content: '';
+				position: absolute;
+				width: 20vw;
+				height: 100%;
+				background: transparent;
+				border-bottom: solid 1px red;
+			}
+			.md-p-border1::after {
+				content: '';
+				position: absolute;
+				width: 20vw;
+				height: 100%;
+				background: transparent;
+				border-bottom: solid 1px #029245;
+			}
+			/*--------------------------开始------------------------------*/
+			
+			@keyframes lineIn {
+				from {
+					width: 0;
+				}
+				to {
+					width: 100%;
+				}
+			}
+			/*适应于火狐浏览器*/
+			
+			@-moz-keyframes lineIn {
+				from {
+					width: 0;
+				}
+				to {
+					width: 100%;
+				}
+			}
+			/*适应于Opera（欧朋）浏览器*/
+			
+			@-o-keyframes lineIn {
+				from {
+					width: 0;
+				}
+				to {
+					width: 100%;
+				}
+			}
+			/*适应于谷歌浏览器*/
+			
+			@-webkit-keyframes lineIn {
+				from {
+					width: 0;
+				}
+				to {
+					width: 100%;
+				}
+			}
+			/*---------------------------退回------------------------------*/
+			
+			@keyframes lineOff {
+				from {
+					width: 100%;
+				}
+				to {
+					width: 0;
+				}
+			}
+			
+			@-moz-keyframes lineOff {
+				from {
+					width: 100%;
+				}
+				to {
+					width: 0;
+				}
+			}
+			
+			@-o-keyframes lineOff {
+				from {
+					width: 100%;
+				}
+				to {
+					width: 0;
+				}
+			}
+			
+			@-webkit-keyframes lineOff {
+				from {
+					width: 100%;
+				}
+				to {
+					width: 0;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="nav">
+			<div style="width: 600px;min-height: 60px;display: flex;justify-content:center;align-items: center;text-align:center;margin-top: 100px;background-color: rgb(84, 92, 100);">
+				<div style="flex: 1;" class="xds123" :class="{'changBg':isBgChange}" @mouseover="onMouseover">
+					<span style="border-bottom:1px solid #95989A;padding-bottom: 10px;color: white;">Design Mind</span>
+				</div>
+				<div style="flex: 1;" class="xds123" :class="{'changBg':isBgChange1}" @mouseover="onMouseover1"><span style="border-bottom:1px solid #95989A;padding-bottom: 10px;color: white;">Our Work</span></div>
+				<div style="flex: 1;" class="xds123" :class="{'changBg':isBgChange2}" @mouseover="onMouseover2"><span style="border-bottom:1px solid #95989A;padding-bottom: 10px;color: white;">Get in Touch</span></div>
+
+			</div>
+			<div class="xds1231" style="width: 600px;" :style="{'display':isShow1}" id="one">
+				<div style="display: flex;" @mouseleave="onMouseOut">
+					<div style="flex: 1;background-color: rgb(67, 74, 80);">
+						<p @mouseover="onMouseoverInner" style="display: flex;
+    justify-content: center;
+    align-items: center;overflow: hidden;
+"><span :class="{'md-p-border':showBoder1}">情趣</span></p>
+						<p @mouseover="onMouseoverInner1" style="display: flex;
+    justify-content: center;
+    align-items: center;    overflow: hidden;"><span :class="{'md-p-border1':showBoder2}">儿童医疗器械</span></p>
+						<p @mouseover="onMouseoverInner2"><span :class="{'md-p-border2':showBoder3}">电子产品</span></p>
+					</div>
+					<div style="flex: 1;max-width: 200px;margin-top: 10px;" :class="{'xdsnew':isXdsInner}">
+						<div v-show="isXdsInner1" style="display: flex;height:100%;justify-content: center;align-items: center;background-color: #A2271D;color: white;">
+							<p>安德拉见识到了卡进度</p>
+						</div>
+						<div v-show="isXdsInner2" style="display: flex;height:100%;justify-content: center;align-items: center;background-color: #029245;color: white;">
+							<p>哦啊的</p>
+						</div>
+						<!--<div v-show="isXdsInner3" style="display: flex;height:100%;justify-content: center;align-items: center;">
+							<p>了解到拉丝机大量收集大量</p>
+						</div>-->
+					</div>
+					<div style="flex: 1;">
+					</div>
+				</div>
+			</div>
+			<div style="width: 600px;" class="xds1231" :style="{'display':isShow2}">
+				<div style="display: flex;" @mouseleave="onMouseOut1">
+					<div style="flex: 1;">
+					</div>
+					<div style="flex: 1;background-color: rgb(67, 74, 80);">
+						<div>2222</div>
+						<div>222223333</div>
+					</div>
+					<div style="flex: 1;">
+					</div>
+				</div>
+			</div>
+			<div style="width: 600px;" class="xds1231" :style="{'display':isShow3}">
+				<div style="display: flex;" @mouseleave="onMouseOut2">
+					<div style="flex: 1;">
+					</div>
+					<div style="flex: 1;">
+					</div>
+					<div style="flex: 1;background-color: rgb(67, 74, 80);">
+						<div>3333</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/libs/vue.min.js"></script>
+		<script type="text/javascript" src="../js/libs/elm.js"></script>
+		<script type="text/javascript" src="../js/libs/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			new Vue({
+				el: '#nav',
+				data() {
+					return {
+						activeIndex: '0',
+						activeIndex2: '2-2',
+						isXds: false,
+						isShow1: 'none',
+						isShow2: 'none',
+						isShow3: 'none',
+						isBgChange: false,
+						isBgChange1: false,
+						isBgChange2: false,
+
+						isXdsInner: false,
+						isXdsInner1: false,
+						isXdsInner2: false,
+						isXdsInner3: false,
+
+						showBoder1: false,
+						showBoder2: false,
+						showBoder3: false
+					}
+				},
+				mounted() {},
+				methods: {
+					handleSelect(key, keyPath) {
+						console.log(key, keyPath);
+					},
+					onMouseover() {
+						this.isShow1 = 'block'
+						this.isShow2 = 'none'
+						this.isShow3 = 'none'
+						this.isBgChange = true
+						this.isBgChange1 = false
+						this.isBgChange2 = false
+						this.isXdsInner = false
+						console.log(`11111`)
+					},
+					onMouseover1() {
+						this.isShow2 = 'block'
+						this.isShow1 = 'none'
+						this.isShow3 = 'none'
+						this.isBgChange1 = true
+						this.isBgChange = false
+						this.isBgChange2 = false
+						this.isXdsInner = false
+						console.log(`11111`)
+					},
+					onMouseover2() {
+						this.isShow3 = 'block'
+						this.isShow2 = 'none'
+						this.isShow1 = 'none'
+						this.isBgChange2 = true
+						this.isBgChange1 = false
+						this.isBgChange = false
+						this.isXdsInner = false
+						console.log(`11111`)
+					},
+					onMouseOut() {
+						this.isShow1 = 'none'
+						this.isBgChange = false
+						this.showBoder1 = false
+						this.showBoder2 = false
+						this.showBoder3 = false
+
+						this.isXdsInner1 = false
+						this.isXdsInner2 = false
+						this.isXdsInner3 = false
+						console.log(`2324234`);
+					},
+					onMouseOut1() {
+						this.isShow2 = 'none'
+						this.isBgChange1 = false
+					},
+					onMouseOut2() {
+						this.isShow3 = 'none'
+						this.isBgChange2 = false
+					},
+					onMouseoverInner() {
+						this.showBoder1 = true
+						this.showBoder2 = false
+						this.showBoder3 = false
+
+						this.isXdsInner = true
+						this.isXdsInner1 = true
+						this.isXdsInner2 = false
+						this.isXdsInner3 = false
+					},
+					onMouseoverInner1() {
+						this.showBoder1 = false
+						this.showBoder2 = true
+						this.showBoder3 = false
+						this.isXdsInner = true
+						this.isXdsInner1 = false
+						this.isXdsInner2 = true
+						this.isXdsInner3 = false
+					},
+					onMouseoverInner2() {
+						/*this.showBoder1 = false
+						this.showBoder2 = false
+						this.showBoder3 = true
+
+						this.isXdsInner = true
+						this.isXdsInner1 = false
+						this.isXdsInner2 = false
+						this.isXdsInner3 = true*/
+						this.showBoder1 = false
+						this.showBoder2 = false
+						this.showBoder3 = false
+
+						this.isXdsInner = false
+						this.isXdsInner1 = false
+						this.isXdsInner2 = false
+						this.isXdsInner3 = false
+					},
+					addHover() {
+						var _this = this;
+						_this.isXds = true
+						console.log(1111);
+					},
+					onHidefocus() {
+						console.log(`123`);
+					},
+					removeHover() {
+						this.isXds = false
+					},
+					abc: () => {
+						$('.xds1').on("mouseover mouseout", function(event) {
+							if(event.type == "mouseover") {
+								//鼠标悬浮
+								console.log(`2324`);
+								this.addClass('.xdsnew')
+							} else if(event.type == "mouseout") {
+								//鼠标离开
+								console.log(`121223`);
+							}
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

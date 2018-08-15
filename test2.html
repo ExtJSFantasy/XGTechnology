@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<link rel="stylesheet" type="text/css" href="css/xiao.css"/>-->
+		<style type="text/css">
+			body,html,.mainBox{
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+				overflow: hidden;
+			}
+			.flexHalign{
+				display: flex;
+				flex-direction: row;
+			}
+			.flexValign{
+				display: flex;
+				flex-direction: column;
+			}
+			.textCenter{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.blackbg{
+				background: rgba(0,0,0,0.2);
+			}
+			.pos_ab{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			
+			
+			.box{
+				width: 20vw;
+				height: 10vh;
+				background: red;
+				border-bottom: 2px solid white;
+				overflow: hidden;
+			}
+			span{
+				position: relative;
+				width: auto;
+				height: auto;
+				/*box-sizing: border-box;*/
+				border-bottom: solid 0.3vh #fff;
+			}
+			span:after{
+				content: '';
+				position: absolute;
+				width: 20vw;
+				height: 100%;
+				background: green;
+				border-bottom: solid 0.3vh #fff;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="mainBox">
+			<div class="flexValign">
+				<div class="box textCenter">
+					<span>一一二三</span>
+				</div>
+				<div class="box textCenter">
+					<span>一一二三0000000031hwggasdh</span>
+				</div>
+				<div class="box textCenter">
+					<span>阿拉山口大家啊傻的</span>
+				</div>
+				<div class="box textCenter"></div>
+			</div>
+		</div>
+	</body>
+</html>
