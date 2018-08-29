@@ -33,7 +33,7 @@
 			}
 			
 			.bg-blur {
-				float: left;
+				/*float: left;*/
 				width: 100%;
 				height: 350px;
 				background-repeat: no-repeat;
@@ -47,15 +47,22 @@
 			}
 			
 			.content-front {
-				position: absolute;
 				width: 100%;
-				/*height: 50%;*/
+				position: absolute;
+				top: 0;
+				text-align: center;
+				/*width: 100%;
 				text-align: center;
 				line-height: 300px;
 				font-size: 40px;
 				color: #F8F7F8;
-				font-weight: lighter;
+				font-weight: lighter;*/
+				/*display: flex;
+				height: 100%;
+				justify-content: center;
+				align-items: center;*/
 			}
+			
 			.time {
 				font-size: 13px;
 				color: #999;
@@ -73,6 +80,7 @@
 			
 			.image {
 				width: 100%;
+				max-height: 280px;
 				display: block;
 			}
 			
@@ -178,7 +186,10 @@
 			
 			.md-main-mid-tip {
 				width: 100%;
-				background-color: #95989A;
+				position: absolute;
+				/*background-color: #95989A;*/
+				background-color: transparent;
+				bottom: 0px;
 			}
 			
 			.md-main-mid-tip-div {
@@ -200,11 +211,14 @@
 			}
 			
 			.md-footer-padding {
-				padding-left: 10%;
+				padding-left: 175px;
 				padding-top: 1%;
 			}
 			
 			.md-footer-module {
+				font-size: 60px;
+				font-weight: 400;
+				color: #4F5153;
 				-webkit-margin-after: .1em;
 			}
 			
@@ -229,7 +243,7 @@
 			/*第二部分*/
 			
 			.md-footer-module2 {
-				padding-right: 10%;
+				padding-right: 175px;
 				padding-bottom: 10%;
 				background-color: rgb(248, 247, 248);
 			}
@@ -258,23 +272,33 @@
 				height: 230px;
 				background-color: #95989A;
 			}
+			
+			.el-col-8 {
+				height: 565px;
+			}
 		</style>
 	</head>
 
 	<body>
 		<div id="main" class="md-main">
-			<div id="main2" style="">
-				<div class="bg bg-blur"></div>
-				<div class="content content-front">发现生活的艰难，然后用设计产品去填满</div>
+			<div id="main2" style="position: relative;height: 600px;background-color: rgb(149, 152, 154);">
+				<div class="bg bg-blur">
+				</div>
+
+				<div style="width: 100%;" class="content-front">
+					<p class="" style="font-size: 50px;
+    font-weight: 100;">”发现生活的艰难，然后用设计产品去填满“</p>
+				</div>
 				<div class="md-main-mid-tip">
-					<div class="md-main-mid-tip-div" @click="ongClickDown"><img src="../images/updown.png" /></div>
+					<div class="md-main-mid-tip-div" @click="ongClickDown"><img style="margin-bottom: 115px;cursor: pointer;" src="../images/updown.png" /></div>
 				</div>
 			</div>
 			<div id="footer" class="md-footer">
 				<div class="md-footer-padding">
-					<h3 class="md-footer-module">News</h3>
+					<h3 class="md-footer-module" style="-webkit-margin-after: 25px;
+    -webkit-margin-before: 105px;">News</h3>
 					<div class="md-footer-line"></div>
-					<el-row :gutter="24" class="md-footer-row-right">
+					<el-row :gutter="24" class="md-footer-row-right" style="margin-top: 40px;">
 						<el-col :span="8">
 							<el-card shadow="hover">
 								<img src="../images/hamburger.png" class="image">
@@ -314,9 +338,10 @@
 					</el-row>
 				</div>
 				<div class="md-footer-module2">
-					<h3 class="md-footer-module2-name">设计师/品牌</h3>
+					<h3 class="md-footer-module2-name" style="font-size: 60px;font-weight: 400;color: #4F5153;-webkit-margin-after: 25px;
+    -webkit-margin-before: 105px;">设计师 / 品牌</h3>
 					<div id="line" class="md-footer-line"> </div>
-					<el-row :gutter="24" class="md-footer-row-left">
+					<el-row :gutter="24" class="md-footer-row-left" style="margin-top: 40px;">
 						<el-col :span="8">
 							<el-card shadow="hover">
 								<img src="../images/hamburger.png" class="image">
@@ -373,6 +398,7 @@
 							}
 						},
 						mounted() {
+							console.log(`11111`);
 						},
 						methods: {
 							handleSelect(key, keyPath) {
@@ -382,12 +408,15 @@
 							ongClickDown() {
 								this.$nextTick(function() {
 									$('html,body').animate({
-										scrollTop: $('.bottom').offset().top + 300
+										scrollTop: $('.bottom').offset().top + 800
 									}, 800);
 								})
 							},
 							onClickBigType(type) {
 								console.log(`您点击了${type}`);
+							},
+							abc(){
+								console.log(`898989`)
 							}
 						}
 					})

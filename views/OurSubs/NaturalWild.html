@@ -12,25 +12,22 @@
 				height: 100%;
 				margin: 0;
 				padding: 0;
-				background-color: #F8F7F8;
+				background-color: rgb(230, 228, 230);
 				font-family: "Helvetica Neue";
 			}
 			
 			::-webkit-scrollbar {
-				width: 0;
-				/* 滚动条宽度为0 */
-				height: 0;
-				/* 滚动条高度为0 */
+				width: 50px;
+				height: 100%;
 				display: none;
-				/* 滚动条隐藏 */
 			}
 			
 			.selfImg {
 				position: absolute;
-				left: 55px;
+				left: 140px;
 				bottom: 0px;
-				font-size: 18px;
-				font-weight: 600;
+				font-size: 60px;
+				/*font-weight: 600;*/
 			}
 		</style>
 	</head>
@@ -38,27 +35,34 @@
 	<body>
 		<div id="wild" style="width: 100%;height: 100%;">
 			<div style="display: flex;height: 100%;width: 100%;">
-				<div style="flex: 2;background-color: #E6E4E6;">
-					<div style="display:flex;position: relative;margin: 40px 15px 0px 15px;">
-						<img style="width: 50px;height: 50px;background: #A2271D;" src="../../images/naturaone.png" />
+				<div style="flex: 3;background-color: #E6E4E6;width: 100%;min-width: 460px;">
+					<div style="display:flex;position: relative;margin: 40px 0px 0 80px;width: 100%;">
+						<img style="width: 130px;height: 130px;background: #A2271D;" src="../../images/nlogo2.png" />
 						<span class="selfImg">自然野</span>
 					</div>
-					<p style="margin: 10px 15px 0px 15px; ">就拉斯基的拉丁江岸粮食的来得及萨拉大家阿斯利康大家觉得手拉手巨大拉德斯基拉萨大家啊欧文u请我</p>
+					<p style="margin: 45px 60px 0px 80px; font-size: 20px;color: #95989A;font-size: 2vh;letter-spacing: 5px;">就拉斯基的拉丁江岸粮食的来得及萨拉大家阿斯,利康大家觉得手拉手巨大拉德斯基拉萨大家啊欧文u请我,的精神空间大卫欧哇靠</p>
 				</div>
-				<div style="flex: 7;">
+				<div style="height: 100%;flex: 8;background-color: #F8F7F8;">
 					<div style="display: flex;max-height: 300px;min-height: 200px;margin: 40px 15px 0px 15px;">
 						<div style="flex: 1;border: solid 1px red;border-right-color: transparent;"></div>
 						<div style="flex: 1;border: solid 1px red;"></div>
 					</div>
 					<div style="border: solid 1px red;min-height: 200px;margin: 20px 15px 0px 15px;"></div>
 					<div style="border: solid 1px red;min-height: 200px;margin: 20px 15px 0px 15px;"></div>
-					<!--<div style="border: solid 1px red;min-height: 200px;margin: 20px 15px 0px 15px;"></div>-->
+					
+					<div style="display: flex;max-height: 300px;min-height: 200px;background-color: #F8F7F8;">
+						<div style="flex: 1;border: border-right-color: transparent;"></div>
+						<div style="flex: 1;"></div>
+					</div>
+					<div style="min-height: 200px;background-color: #F8F7F8;"></div>
+					<div style="min-height: 200px;background-color: #F8F7F8;"></div>
 				</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="../../js/libs/vue.min.js"></script>
 		<script type="text/javascript" src="../../js/libs/elm.js"></script>
 		<script type="text/javascript" src="../../js/function.js"></script>
+		<script type="text/javascript" src="../../js/libs/jquery-3.3.1.min.js" ></script>
 		<script type="text/javascript">
 			new Vue({
 				el: '#wild',
@@ -67,7 +71,22 @@
 
 					}
 				},
-				mounted() {},
+				mounted() {
+					var _this = this;
+						$(window).scroll(function() {
+							// 当滚动到最底部以上600像素时， 加载新内容
+							console.log($(document).height() - $(this).scrollTop() - $(this).height());
+							if($(document).height() - $(this).scrollTop() - $(this).height() < 150) {
+								window.parent.frames.setHideOrShow('hide');
+							}
+						});
+						$(window).scroll(function() {
+							// 当滚动到顶部600像素时， 加载新内容
+							if($(document).height() - $(this).scrollTop() - $(this).height() > 150) {
+								window.parent.frames.setHideOrShow('show');
+							}
+						});
+				},
 				methods: {
 
 				}

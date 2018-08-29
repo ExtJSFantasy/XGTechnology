@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="../css/elm.css" />
+		<link rel="stylesheet" href="../css/selfFont/style.css" />
 		<style type="text/css">
 			html,
 			body {
@@ -116,10 +117,12 @@
 			.md-main-display {
 				display: flex;
 				min-height: 70px;
+				/*padding-top: 80px;
+				padding-bottom: 40px;*/
 			}
 			
 			.md-main-title {
-				flex: 2;
+				flex: 3;
 				position: relative;
 			}
 			
@@ -128,6 +131,7 @@
 				height: 100%;
 				justify-content: center;
 				align-items: center;
+				cursor: pointer;
 			}
 			
 			.md-main-title-left-logoChange {
@@ -167,10 +171,6 @@
 				margin-left: 55px !important;
 			}
 			
-			.el-menu--horizontal>.el-menu-item.is-active {
-				border-bottom-color: #FFE100 !important;
-			}
-			
 			.md-main-mid-inner {
 				max-width: 200px;
 				clear: left;
@@ -192,6 +192,8 @@
 				height: 100%;
 				justify-content: center;
 				align-items: Center;
+				margin-left: 100px;
+				cursor: pointer;
 			}
 			
 			.md-main-right img {
@@ -236,7 +238,7 @@
 			}
 			
 			.xds123:hover {
-				line-height: 60px;
+				/*line-height: 5vh;*/
 				background-color: rgb(67, 74, 80);
 			}
 			/*.el-dropdown-menu__item--divided:before,
@@ -248,7 +250,8 @@
 			}*/
 			
 			.xdsnew {
-				background-color: rgb(67, 74, 80);
+				/*background-color: rgb(67, 74, 80);*/
+				background-color: transparent;
 			}
 			
 			.xds1231 {
@@ -264,7 +267,8 @@
 			}
 			
 			.changBg {
-				line-height: 60px;
+				/*line-height: 60px;*/
+				padding-top: 4vh;
 				background-color: rgb(67, 74, 80);
 			}
 			
@@ -273,7 +277,7 @@
 				width: auto;
 				height: auto;
 				border-bottom: 1px solid #A2271D;
-				color: #A2271D;
+				color: rgb(208, 131, 124);
 			}
 			
 			.md-p-border1 {
@@ -281,7 +285,7 @@
 				width: auto;
 				height: auto;
 				border-bottom: 1px solid #029245;
-				color: #029245;
+				color: rgb(166, 206, 166);
 			}
 			
 			.md-p-border2 {
@@ -394,7 +398,8 @@
 			}
 			
 			.md-navb {
-				width: 600px;
+				max-width: 800px;
+				min-width: 800px;
 				margin: auto;
 				min-height: 60px;
 				display: flex;
@@ -406,11 +411,12 @@
 			
 			.md-span-border {
 				border-bottom: 1px solid #E6E4E6;
-				padding-bottom: 10px;
+				/*padding-bottom: 10px;*/
 				padding-left: 10px;
 				padding-right: 10px;
 				color: #F8F7F8;
-				font-size: 24px;
+				font-size: 3.5vh;
+				font-weight: 100;
 			}
 			
 			.md-span-borderChange {
@@ -426,6 +432,7 @@
 			
 			.md-header-img-size {
 				width: 180px;
+				/*margin-left: 195px;*/
 			}
 			
 			.item-flex1 {
@@ -435,12 +442,16 @@
 			.md-nav-hover {
 				display: flex;
 				width: 100%;
+				/*height: 100%;*/
 				justify-content: center;
 			}
 			
 			.md-nav-hover-center {
-				width: 600px;
+				max-width: 800px;
+				min-width: 800px;
 				margin: auto;
+				/*解决没有滑动顶部的缝隙*/
+				margin-top: -5px;
 			}
 			
 			.item-dispay {
@@ -465,8 +476,9 @@
 			}
 			
 			.md-nav-hover-item1-details {
-				flex: 1;
-				max-width: 200px;
+				flex: 2;
+				/*max-width: 200px;*/
+				/*margin-left: 1px;*/
 				margin-top: 10px;
 			}
 			
@@ -475,15 +487,23 @@
 				height: 100%;
 				justify-content: center;
 				align-items: center;
+				font-size: 20px;
 				color: #F8F7F8;
+				-webkit-font-smoothing: antialiased;
+				border-left: 1px solid rgb(144, 147, 149);
+				/* mac有用 1、none: 无抗锯齿
+
+2、subpixel-antialiased (default): 次像素平滑 常见于Mac OS和MacType For Windows
+
+3、antialiased: 灰度平滑 常用于Android和iOS等移动设备的*/
 			}
 			
 			.md-nav-hover-item1-details-color-red {
-				background-color: #A2271D;
+				background-color: rgb(162, 39, 28);
 			}
 			
 			.md-nav-hover-item1-details-color-green {
-				background-color: #029245;
+				background-color: rgb(0, 146, 69);
 			}
 			
 			.md-natural {
@@ -492,12 +512,23 @@
 			}
 			
 			.md-search-size {
-				font-size: 45px;
+				font-size: 60px;
 				color: #F8F7F8;
 			}
 			
 			.md-item-active {
 				border-bottom: 2px solid #FFE100 !important;
+			}
+			
+			.md-navbar-active {
+				border-bottom: 1px solid transparent !important;
+			}
+			
+			@media only screen and (max-width: 1350px) {
+				/*.md-nav-hover-center {
+					max-width: 600px;
+					min-width: 600px;
+				}*/
 			}
 		</style>
 	</head>
@@ -505,53 +536,65 @@
 	<body>
 		<div id="home">
 			<div id="header" class="md-main-display" :style="{'background-color': isChangeBg}">
-				<div class="md-main-title" :style="{'background-color':isChangeBg2}">
+				<div class="md-main-title" :style="{'background-color':isChangeBg2}" style="
+    padding-bottom: 40px;padding-top: 4vh;min-width: 460px;">
 					<div class="md-main-title-left-logo" @click="goMain">
 						<img :src="leftLogo" class="md-header-img-size" />
 					</div>
 				</div>
-				<div id="nav" class="md-main-mid">
+				<div id="nav" class="md-main-mid" style="
+    padding-bottom: 40px;">
 					<div class="md-navb">
-						<div class="xds123 item-flex1" :class="{'changBg':isBgChange}" @mouseover="onMouseover">
-							<span class="md-span-border" :class="{'md-span-borderChange':isChangBgone}">理念</span>
+						<div class="xds123 item-flex1" style="padding-top: 4vh;" :class="{'changBg':isBgChange}" @mouseover="onMouseover">
+							<span class="md-span-border" :class="{'md-span-borderChange':isChangBgone,'md-navbar-active':isBgChange,'md-item-active':isActive2}">理念</span>
 						</div>
-						<div class="xds123 item-flex1" :class="{'changBg':isBgChange1}" @mouseover="onMouseover1"><span class="md-span-border" :class="{'md-span-borderChange':isChangBgone}">品牌</span></div>
-						<div class="xds123 item-flex1" @mouseover="onMouseover2" @click="onClickBigType('touch')"><span class="md-span-border" :class="{'md-span-borderChange':isChangBgone,'md-item-active':isActive1}">联系我们</span></div>
+						<div class="xds123 item-flex1" style="padding-top: 4vh;" :class="{'changBg':isBgChange1}" @mouseover="onMouseover1"><span class="md-span-border" :class="{'md-span-borderChange':isChangBgone,'md-navbar-active':isBgChange1,'md-item-active':isActive3}">品牌</span></div>
+						<div class="xds123 item-flex1" style="padding-top: 4vh;" @mouseover="onMouseover2" @click="onClickBigType('touch')" style="cursor: pointer;"><span class="md-span-border" :class="{'md-span-borderChange':isChangBgone,'md-item-active':isActive1}">联系我们</span></div>
 
 					</div>
 					<div class="md-nav-hover">
 						<div class="xds1231 md-nav-hover-center" :style="{'display':isShow1}" id="one">
 							<div class="item-dispay" @mouseleave="onMouseOut">
+								<!--@mouseleave="onMouseOut"-->
 								<div class="md-nav-hover-item1">
-									<p @mouseover="onMouseoverInner" class="md-nav-hover-item1-center" @click="onClickBigType('interest')"><span :class="{'md-p-border':showBoder1}">情趣</span></p>
-									<p @mouseover="onMouseoverInner1" class="md-nav-hover-item1-center"><span :class="{'md-p-border1':showBoder2}">儿童医疗器械</span></p>
-									<p @mouseover="onMouseoverInner2" class="item-color"><span class="selfN">电子产品</span></p>
-									<p @mouseover="onMouseoverInner2" class="item-color"><span class="selfN">其它</span></p>
+									<p @mouseover="onMouseoverInner" class="md-nav-hover-item1-center" style="cursor: pointer;font-weight: 400;
+    font-size: 2vh;" @click="onClickBigType('interest')"><span :class="{'md-p-border':showBoder1}">情趣</span></p>
+									<p @mouseover="onMouseoverInner1" class="md-nav-hover-item1-center"><span :class="{'md-p-border1':showBoder2}" style="font-weight: 400;
+    font-size: 2vh;cursor: pointer;">儿童医疗器械</span></p>
+									<p @mouseover="onMouseoverInner2" class="item-color"><span class="selfN" style="font-weight: 400;
+    font-size: 2vh;cursor: pointer;">电子产品</span></p>
+									<p @mouseover="onMouseoverInner2" class="item-color"><span class="selfN" style="font-weight: 400;
+    font-size: 2vh;cursor: pointer;">其它</span></p>
 								</div>
 								<div class="md-nav-hover-item1-details" :class="{'xdsnew':isXdsInner}">
-									<div v-show="isXdsInner1" class="md-nav-hover-item1-details-color md-nav-hover-item1-details-color-red">
-										<p v-text="interestone"></p>
+									<div v-show="isXdsInner1" class="md-nav-hover-item1-details-color md-nav-hover-item1-details-color-red" style="    margin-right: 53px;">
+										<p style="margin-left: 20px;font-weight: 600;margin-right: 15px;font-size: 1.7vh;    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;" v-text="interestone"></p>
 									</div>
-									<div v-show="isXdsInner2" class="md-nav-hover-item1-details-color md-nav-hover-item1-details-color-green">
-										<p v-text="interesttwo"></p>
+									<div v-show="isXdsInner2" class="md-nav-hover-item1-details-color md-nav-hover-item1-details-color-green" style="    margin-right: 53px;">
+										<p style="margin-left: 20px;font-weight: 600;margin-right: 15px;font-size: 1.7vh; -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;" v-text="interesttwo"></p>
 									</div>
 									<!--<div v-show="isXdsInner3" style="display: flex;height:100%;justify-content: center;align-items: center;">
 							<p>了解到拉丝机大量收集大量</p>
 						</div>-->
 								</div>
-								<div class="item-flex1">
-								</div>
+								<!--<div class="item-flex1">
+								</div>-->
 							</div>
 						</div>
 					</div>
 					<div class="md-nav-hover">
 						<div class="xds1231 md-nav-hover-center" :style="{'display':isShow2}">
 							<div class="item-dispay" @mouseleave="onMouseOut1">
+								<!--@mouseleave="onMouseOut1"-->
 								<div class="item-flex1">
 								</div>
 								<div class="md-natural">
-									<p class="item-color"><span class="selfN" @click="onClickBigType('natural')">自来野</span></p>
-									<p class="item-color"><span class="selfN">其它</span></p>
+									<p class="item-color" style="cursor: pointer;font-weight: 400;
+    font-size: 2vh;"><span class="selfN" @click="onClickBigType('natural')">自来野</span></p>
+									<p class="item-color" style="cursor: pointer;font-weight: 400;
+    font-size: 2vh;"><span class="selfN">其它</span></p>
 								</div>
 								<div class="item-flex1">
 								</div>
@@ -559,26 +602,29 @@
 						</div>
 					</div>
 				</div>
-				<div class="md-main-title">
+				<div class="md-main-title" style="
+    padding-bottom: 40px;padding-top: 4vh;">
 					<div class="md-main-right">
 						<!--<img src="../images/search.png" />-->
 						<i class="el-icon-search md-search-size" :style="{'color':isChangeBg3}"></i>
 					</div>
 				</div>
 			</div>
-			<iframe class="md-iframe" :src="goPath"></iframe>
+			<iframe name="myFrame" class="md-iframe" :src="goPath" ref="goref"></iframe>
 		</div>
 		<script type="text/javascript" src="../js/libs/vue.min.js"></script>
 		<script type="text/javascript" src="../js/libs/elm.js"></script>
 		<script type="text/javascript" src="../js/function.js"></script>
 		<script type="text/javascript">
-			new Vue({
+			//window.onload = function() {
+			var _home = new Vue({
 				el: '#home',
 				data() {
 					return {
 						activeIndex2: 1,
-						leftLogo: '../images/main-logo1.png',
+						leftLogo: '../images/main1.png',
 						goPath: 'main.html',
+						goref: 'main',
 						primarytitleone: '',
 						primarytitletwo: '',
 						primarytitlethree: '',
@@ -609,8 +655,20 @@
 						showBoder1: false,
 						showBoder2: false,
 						showBoder3: false,
-						isActive1:false
+						isActive1: false,
+						isActive2: false,
+						isActive3: false,
+						isHover1: '',
+						index:1
 					}
+				},
+				watch: {
+					isChangeBg(curVal, oldVal) {　　　　　　　　　　
+						console.log(curVal, oldVal);
+						if(curVal === '#F8F7F8') {
+
+						}　　　　　　　　
+					},
 				},
 				mounted() {
 					var _this = this;
@@ -631,15 +689,20 @@
 							this.primarytitletwo = '儿童医疗器械',
 							this.primarytitlethree = '电子产品',
 							this.primarytitlefour = '其它',
-							this.interestone = '对自己好一点，买体面的腕表、吃精致的美食,安静的辣椒水的垃圾达拉斯的加拉受打击了按时打开拉萨扩大上课大大撒大撒大撒大撒大撒大撒大撒大撒法的规定',
-							this.interesttwo = '对自己好一点，买体面的腕表、吃精致的美食,安静的辣椒水的垃圾达拉斯的加拉受打击了按时打开拉萨扩大上课大大撒大撒大撒大撒大撒大撒大撒大撒法的规定'
+							this.interestone = '对自己好一点，买最体面的腕表、吃精致的美食对自己更好一点？ 是时候给生活加点情趣了情趣不止于性， 更不只存在于情侣之间它是生活的一部分， 也是熙瓜要送给你的品质生活礼物',
+							this.interesttwo = '儿童不是小一号的成年人，他们的生命美好却脆弱熙瓜认为让儿童被迫努力适应属于成人的冰冷医疗器械，是对童年的亵渎小小病患脸上任何一点笑容，都是对家庭生活品质最好的提升为病痛无助的小朋友带去一丝慰藉，是熙瓜美好的心愿'
 					})
-					let i = 1;
+					if(this.isChangeBg) {
+						console.log(`111223444`)
+					}
+					if(_this.isChangeBg == '#F8F7F8'){
+						_this.index = 2
+					}
 					let _setInterval = setInterval(function() {
-						_this.leftLogo = "../images/main-logo" + i + ".png";
-						i++
-						if(i == 3) {
-							i = 1
+						_this.leftLogo = "../images/main" + _this.index + ".png";
+						_this.index++
+						if(_this.index == (_this.isChangeBg == '#F8F7F8' ? 4 : 3)) {
+							_this.index = _this.isChangeBg == '#F8F7F8' ? 2 : 1
 						}
 						_setInterval = null
 						clearInterval()
@@ -657,11 +720,23 @@
 						switch(type) {
 							case 'touch':
 								_this.isActive1 = true
+								_this.isActive2 = false
+								_this.isActive3 = false
 								_this.isChangeBg2 = 'transparent'
 								_this.goPath = 'touch.html?' + '/touch'
+								//_this.goref = 'touch'
+								console.log(_this.$refs.goref.contentWindow);
+								setTimeout(function() {
+									_this.$nextTick(function() {
+										_this.$refs.goref.contentWindow.acbf()
+									})
+								}, 1000)
+
 								break;
 							case 'interest':
 								_this.isActive1 = false
+								_this.isActive2 = true
+								_this.isActive3 = false
 								_this.isChangeBg = '#F8F7F8'
 								_this.isChangeBg2 = 'transparent'
 								_this.isChangBgone = true;
@@ -671,9 +746,12 @@
 								break;
 							case 'natural':
 								_this.isActive1 = false
+								_this.isActive2 = false
+								_this.isActive3 = true
 								_this.isChangeBg = '#F8F7F8'
 								_this.isChangeBg2 = '#E6E4E6'
 								_this.isChangBgone = true;
+								_this.isChangeBg3 = '#95989A !important'
 								_this.onMouseOut1()
 								_this.goPath = 'OurSubs/NaturalWild.html?' + '/NaturalWild'
 								break;
@@ -744,6 +822,7 @@
 						this.isXdsInner1 = true
 						this.isXdsInner2 = false
 						this.isXdsInner3 = false
+						this.isHover1 = '#f8f8f8 !important'
 					},
 					onMouseoverInner1() {
 						this.showBoder1 = false
@@ -771,9 +850,26 @@
 						this.isXdsInner1 = false
 						this.isXdsInner2 = false
 						this.isXdsInner3 = false
+					},
+					//隐藏和显示头部
+					setNavb(str) {
+						if(str === 'hide') {
+							document.getElementById('home').style.height = '100%';
+							document.getElementById('header').style.display = 'none'
+						} else {
+							document.getElementById('home').style.height = (document.body.clientHeight - document.getElementById('header').clientHeight) + 'px';
+							document.getElementById('header').style.display = 'flex'
+						}
+
+						console.log(`头部:${str}`)
 					}
 				}
 			})
+			//}
+			function setHideOrShow(str) {
+				_home.setNavb(str)
+				console.log(`您是个好人`)
+			}
 		</script>
 	</body>
 

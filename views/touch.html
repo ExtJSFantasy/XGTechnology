@@ -68,9 +68,9 @@
 		<script type="text/javascript" src="../js/function.js"></script>
 		<script type="text/javascript" src="../js/libs/mui.min.js"></script>
 		<script type="text/javascript">
-			(function() {
-				window.onload = function() {
-					new Vue({
+			//(function() {
+				//window.onload = function() {
+					var _app = new Vue({
 						el: '#main',
 						data() {
 							return {
@@ -91,10 +91,18 @@
 								clearInterval()
 							}, 2000);*/
 						},
-						methods: {}
+						methods: {
+							ancf() {
+								console.log(`eqwFileRequest3`)
+							}
+						}
 					})
-				}
-			})()
+
+					function acbf() {
+						_app.ancf()
+					}
+				//}
+			//})()
 		</script>
 	</body>
 

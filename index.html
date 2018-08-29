@@ -17,25 +17,25 @@
 				background-color: #F8F7F8;
 				font-family: "Helvetica Neue";
 			}
-			
-			::-webkit-scrollbar {
+			/*::-webkit-scrollbar {
 				width: 0;
-				/* 滚动条宽度为0 */
 				height: 0;
-				/* 滚动条高度为0 */
 				display: none;
-				/* 滚动条隐藏 */
-			}
+			}*/
 			
 			.el-main {
 				padding: 0px;
 			}
 			
 			.main-wrap {
+				position: relative;
 				margin: 0 auto;
-				min-width: 320px;
+				min-width: 33vw;
+				max-height: 96vh;
 				/*max-width: 640px;*/
-				max-width: 100%;
+				max-width: 100vw;
+				/*padding-top: 11vh;*/
+				background-color: rgb(149, 152, 154);
 			}
 			
 			.main-wrap video {
@@ -55,13 +55,13 @@
 			
 			.nabla:before {
 				content: '';
-				background: url('images/symbol-nabla.png') no-repeat left center;
-				/*兼容没测*/
+				background: url(images/symbol-nabla.png) no-repeat left center;
 				position: absolute;
 				z-index: 2;
-				width: 32px;
-				height: 20px;
-				margin-left: -35px;
+				width: 60px;
+				height: 85px;
+				/* font-size: 6vh; */
+				margin-left: -46px;
 			}
 			
 			p {
@@ -70,21 +70,28 @@
 			}
 			
 			.md-all-content {
-				height: 80px !important;
-				position: relative;
+				width: 100%;
+				position: absolute;
+				z-index: 10001;
+				top: 0;
 				background-color: #95989A;
 			}
 			
 			.md-title {
-				display: flex;
 				position: absolute;
-				height: 100%;
-				justify-content: center;
+				display: flex;
+				z-index: 10000;
+				width: 100%;
+				height: 12vh;
+				/* justify-content: center; */
+				margin-top: 4vh;
 				align-items: Center;
+				padding-bottom: 2vh;
+				background-color: rgba(155, 158, 160, 0.3);
 			}
 			
 			.md-header-img {
-				height: 60px;
+				height: 8.26vh;
 			}
 			
 			.md-header-img:last-child {
@@ -93,24 +100,30 @@
 			
 			.md-height {
 				/*height: 100%;*/
-				padding-top: 5%;
+				/*padding-top: 5%;*/
+				padding-top: 170px;
 			}
 			
 			.md-slite-line {
-				width: 80%;
+				/*width: 80%;*/
 				height: 1px;
 				background-color: #FFE100;
-				margin: auto;
+				/*margin: auto;*/
+				margin-left: 240px;
+				margin-right: 70px;
 			}
 			
 			.md-down-content {
 				display: flex;
-				width: 80%;
-				margin: auto;
+				/*width: 80%;
+				margin: auto;*/
+				margin-left: 12.5vw;
+				margin-right: 3.6vw;
 			}
 			
 			.md-down-flex6 {
 				flex: 6;
+				margin-right: 15.1vw;
 			}
 			
 			.md-down-flex2 {
@@ -118,23 +131,24 @@
 			}
 			
 			.md-down-right {
-				height: 65px;
-				border: solid 1px;
-				border-left-color: #FFE100;
-				border-top-color: transparent;
-				border-bottom-color: transparent;
-				border-right-color: transparent;
+				height: 80px;
+				position: relative;
+				width: 535px;
+				border-left: 1px solid #FFE100;
 			}
 			
 			.md-down-bg {
 				width: 100%;
-				height: 35px;
+				height: 4.62vh;
 				background-color: #FFE100;
 			}
 			
 			.md-down-jugg {
-				height: 60px;
-				margin-left: 20px;
+				height: 7.4vh;
+				width: 24.7vw;
+				position: absolute;
+				top: 0;
+				margin-left: 60px;
 			}
 			
 			.md-down-right-des {
@@ -142,85 +156,94 @@
 			}
 			
 			.md-go-home {
-				position: fixed;
-				width: 130px;
-				height: 25px;
+				position: absolute;
+				width: 20vw;
+				height: 8.5vh;
 				right: 0px;
-				top: 430px;
-				right: 50px;
+				bottom: 1vh;
+				right: 2.5vw;
 				z-index: 1000;
-				background-color: #FFE100;
+				background-color: rgb(232, 205, 4);
 				text-align: center;
 				display: flex;
 				justify-content: center;
 				align-items: Center;
+				color: #4F5153;
+				font-size: 4.3vh;
+				/*鼠标移动上去变为 手势*/
+				cursor: pointer;
+				border: solid 4px #FFE100;
 			}
 			
 			.md-go-home span {
 				font-size: 12px;
 			}
+			
+			@media only screen and (max-width: 640px) {}
 		</style>
 	</head>
 
 	<body>
 		<div id="app">
-			<el-container>
-				<el-header class="md-all-content" id="header">
+			<div class="md-content" id="footer">
+				<div class="main-wrap" id="video">
+					<div class="md-all-content" id="header">
+						<div style="height: 4vh;background-color: #95989A;"></div>
+					</div>
 					<div class="md-title">
-						<img src="images/plogo.png" class="md-header-img" />
-						<img src="images/index-logo.png" class="md-header-img" />
+						<img src="images/plogo2.png" style="margin-left: 0.4vw;" class="md-header-img" />
+						<img src="images/index-logo.png" style="margin-left: 0.5vw;" class="md-header-img" />
 					</div>
-				</el-header>
-				<el-main>
-					<div class="main-wrap" id="video">
-						<video ishivideo="true" autoplay="true" isrotate="false" autoHide="true">
-							<source src="http://www.html5videoplayer.net/videos/madagascar3.mp4" type="video/mp4">
-						</video>
-						<div class="md-go-home" @click="onClickGoMain">
-							<a>进入首页</a>
-						</div>
+					<video ishivideo="true" autoplay="true" isrotate="false" autoHide="true">
+						<source src="http://www.html5videoplayer.net/videos/madagascar3.mp4" type="video/mp4">
+					</video>
+					<div class="md-go-home" @click="onClickGoMain">
+						<a>进入首页</a>
 					</div>
-					<div class="md-content" id="footer">
-						<div class="md-height">
-							<div class="md-slite-line"></div>
-							<div class="md-down-content">
-								<div class="md-down-flex6">
-									<div style="">
-										<div class="nabla">
-											熙瓜是谁
-											<p>
-												尽快哈是大号打电话黑金沙删除宣布才能执行
-											</p>
-										</div>
-										<div class="nabla">熙瓜要做什么
-											<p>
-												扩大了极大减少的垃圾收到了贷记卡设计的喀什假大空，安静的拉升阶段拉升阶段建设靠大家ask的家啊大家。大驾光临苏俄哦i润兴吹牛欸哦啊请问
-											</p>
-										</div>
-										<div class="nabla">熙瓜的理念
-											<p>了空间打开拉萨巨大空间的里的卡刷点卡是的卡刷点卡 的骄傲可是老大就爱上了大家。啊是多久啊了。宽带端口，圣诞节卡拉圣诞节氨基酸的啊爱的就阿婆i我呸觉得拉大距离，的卡拉就会狄拉克就对啦u而欧帕奇奥啊大家阿拉山口大家恶斗配到了看哈看啥看的哈客户觉得好看垃圾的卡大数据搭理我i未批，二u期间欧文u去外婆欸去巫婆二ui</p>
-										</div>
-									</div>
+				</div>
+				<div class="md-height">
+					<div class="md-slite-line"></div>
+					<div class="md-down-content">
+						<div class="md-down-flex6">
+							<div style="">
+								<div class="nabla">
+									<span style="font-size: 5.7vh;">熙瓜是谁</span>
+									<p style="font-size: 3.5vh;color: #95989A;">
+										想要让好设计成为实用好产品的一群人
+									</p>
 								</div>
-								<div class="md-down-flex2">
-									<div class="md-down-right">
-										<div class="md-down-bg">
-											<img class="md-down-jugg" src="images/symbol-small-jugg.png" />
-										</div>
-									</div>
-									<p class="md-down-right-des">了卡拉圣诞节埃里克森大家拉萨大家卡是捷克大叔控卡达离开的卡达深刻的；啊打开；ask的</p>
+								<div class="nabla">
+									<span style="font-size: 5.7vh;">熙瓜要做什么</span>
+									<p style="font-size: 3.5vh;color: #95989A;">
+										发现生活的艰难，然后用设计产品去填满
+									</p>
+								</div>
+								<div class="nabla">
+									<span style="font-size: 5.7vh;">熙瓜的理念</span>
+									<p style="font-size: 3.5vh;color: #95989A;">生活需要设计，需要那些能让我们眼前一亮的小玩意儿 更需要可以将巧妙的设计，快速落地成为结实好用的物件 能够实现设计师们精奇的脑洞，才能真正给生活注入品质的力量 熙瓜科技要做的，就是在不知不觉中让生活愉快顺畅 不要什么仪式感，也不去刻意追求，熙瓜让你轻松坐拥品质生活
+									</p>
 								</div>
 							</div>
 						</div>
+						<div class="md-down-flex2">
+							<div class="md-down-right" style="background-image: url(images/indexone.png);background-size: 100% 100%;">
+								<!--<div class="md-down-bg">
+								</div>
+								<img class="md-down-jugg" src="images/indexone.png" />-->
+							</div>
+							<p class="md-down-right-des" style="font-size: 3.5vh;">生活需要设计，需要那些能让我们眼前一亮的小玩意儿 更需要可以将巧妙的设计，快速落地成为结实好用的物件 能够实现设计师们精奇的脑洞，才能真正给生活注入品质的力量 熙瓜科技要做的，就是在不知不觉中让生活愉快顺畅 不要什么仪式感，也不去刻意追求，熙瓜让你轻松坐拥品质生活
+							</p>
+						</div>
 					</div>
-				</el-main>
-			</el-container>
-
+				</div>
+				<div style="height: 10vh;margin-top: 9.678vh;background-color: #4F5153;"></div>
+			</div>
 		</div>
 		<script type="text/javascript" src="js/libs/vue.min.js"></script>
 		<script type="text/javascript" src="js/libs/elm.js"></script>
 		<script type="text/javascript" src="js/hivideo.js"></script>
 		<script type="text/javascript" src="js/libs/mui.min.js"></script>
+		<script type="text/javascript" src="js/libs/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript">
 			(function() {
 				new Vue({
@@ -231,6 +254,10 @@
 						}
 					},
 					mounted() {
+						console.log(document.body.clientWidth);
+						console.log(document.body.clientHeight);
+						console.log(this.js_getDPI());
+						console.log(window.screen.deviceXDPI);
 						//window
 						/*window.onbeforeunload = function() //author: meizz   
 						{
@@ -241,6 +268,10 @@
 								window.event.returnValue = "1111"; //这里可以放置你想做的操作代码   
 							}
 						}*/
+						//解决刷新没有回到顶部的问题
+						$('html ,body').animate({
+							scrollTop: -10
+						}, 300);
 						mui.init({
 							preloadPages: [{
 									url: 'views/home.html',
@@ -269,6 +300,21 @@
 								url: 'views/home.html',
 								id: 'home'
 							})
+						},
+						js_getDPI() {
+							var arrDPI = new Array();
+							if(window.screen.deviceXDPI != undefined) {
+								arrDPI[0] = window.screen.deviceXDPI;
+								arrDPI[1] = window.screen.deviceYDPI;
+							} else {
+								var tmpNode = document.createElement("DIV");
+								tmpNode.style.cssText = "width:1in;height:1in;position:absolute;left:0px;top:0px;z-index:99;visibility:hidden";
+								document.body.appendChild(tmpNode);
+								arrDPI[0] = parseInt(tmpNode.offsetWidth);
+								arrDPI[1] = parseInt(tmpNode.offsetHeight);
+								tmpNode.parentNode.removeChild(tmpNode);
+							}
+							return arrDPI;
 						}
 					}
 				})

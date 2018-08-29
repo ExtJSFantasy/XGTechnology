@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>首页</title>
+		<link rel="stylesheet" href="css/elm.css" />
+		<link rel="stylesheet" href="css/hivideo.css" />
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background-color: #F8F7F8;
+				font-family: "Helvetica Neue";
+			}
+			
+			::-webkit-scrollbar {
+				width: 0;
+				/* 滚动条宽度为0 */
+				height: 0;
+				/* 滚动条高度为0 */
+				display: none;
+				/* 滚动条隐藏 */
+			}
+			
+			@media only screen and (max-width: 640px) {
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="md-header">
+				<div style="height: 1.29vh;background-color: rgb(149,152,154);"></div>
+				<div style="width: 100%;background-color: rgb(155,158,160);">
+					<div style="width: 23vw;height: 6.45vh;">
+						<div style="display: flex;height: 100%;align-items: center;">
+							<img src="images/indexLeftOne.png" style="height: 3.06vh;width: 10vw;margin-left: 0.4vw;transform: scale(1,1);" />
+							<img src="images/index-logo.png" style="height: 3.06vh;width: 11vw;margin-left: 0.6vw;" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="md-content">
+				<div style="height: 34.838vh;position: relative;" id="video">
+					<video ishivideo="true" autoplay="true" isrotate="false" autoHide="true">
+						<source src="http://www.html5videoplayer.net/videos/madagascar3.mp4" type="video/mp4">
+					</video>
+					<div style="position: absolute;
+				width: 18vw;
+				height: 3vh;
+				right: 0px;
+				bottom: 1vh;
+				right: 2.5vw;
+				z-index: 1000;
+				background-color: #FFE100;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: Center;
+				color: #4F5153;
+				cursor: pointer;" @click="onClickGoMain">
+						<a>进入首页</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/libs/vue.min.js"></script>
+		<script type="text/javascript" src="js/libs/elm.js"></script>
+		<script type="text/javascript" src="js/hivideo.js"></script>
+		<script type="text/javascript" src="js/libs/mui.min.js"></script>
+		<script type="text/javascript" src="js/libs/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			(function() {
+				new Vue({
+					el: '#app',
+					data: function() {
+						return {
+							active: 1
+						}
+					},
+					mounted() {
+						console.log(document.body.clientWidth);
+						console.log(document.body.clientHeight);
+						console.log(this.js_getDPI());
+						console.log(window.screen.deviceXDPI);
+						//window
+						/*window.onbeforeunload = function() //author: meizz   
+						{
+							var n = window.event.screenX - window.screenLeft;
+							var b = n > document.documentElement.scrollWidth - 20;
+							if(b && window.event.clientY < 0 || window.event.altKey) {
+								alert("是关闭而非刷新");
+								window.event.returnValue = "1111"; //这里可以放置你想做的操作代码   
+							}
+						}*/
+						//解决刷新没有回到顶部的问题
+						$('html ,body').animate({
+							scrollTop: -10
+						}, 300);
+						mui.init({
+							preloadPages: [{
+									url: 'views/home.html',
+									id: 'home'
+								},
+								{
+									url: 'DesignSubs/interest.html',
+									id: 'interest'
+								},
+								{
+									url: 'OueSubs/NaturalWild.html',
+									id: 'NaturalWild'
+								},
+								{
+									url: 'views/main.html',
+									id: 'main'
+								}
+							],
+							preloadLimit: 5 //预加载窗口数量限制(一旦超出,先进先出)默认不限制
+						})
+					},
+					methods: {
+						onClickGoMain() {
+							console.log(`gogogogo`)
+							mui.openWindow({
+								url: 'views/home.html',
+								id: 'home'
+							})
+						},
+						js_getDPI() {
+							var arrDPI = new Array();
+							if(window.screen.deviceXDPI != undefined) {
+								arrDPI[0] = window.screen.deviceXDPI;
+								arrDPI[1] = window.screen.deviceYDPI;
+							} else {
+								var tmpNode = document.createElement("DIV");
+								tmpNode.style.cssText = "width:1in;height:1in;position:absolute;left:0px;top:0px;z-index:99;visibility:hidden";
+								document.body.appendChild(tmpNode);
+								arrDPI[0] = parseInt(tmpNode.offsetWidth);
+								arrDPI[1] = parseInt(tmpNode.offsetHeight);
+								tmpNode.parentNode.removeChild(tmpNode);
+							}
+							return arrDPI;
+						}
+					}
+				})
+			})()
+		</script>
+	</body>
+
+</html>
