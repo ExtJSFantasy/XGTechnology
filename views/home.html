@@ -193,6 +193,7 @@
 				justify-content: center;
 				align-items: Center;
 				margin-left: 100px;
+				margin-right: 50px;
 				cursor: pointer;
 			}
 			
@@ -605,8 +606,13 @@
 				<div class="md-main-title" style="
     padding-bottom: 40px;padding-top: 4vh;">
 					<div class="md-main-right">
+						<!--<el-input placeholder="请输入查找内容" suffix-icon="el-icon-search" clearable v-model="searchVal">
+						</el-input>-->
+						<el-input placeholder="请输入查找内容" v-model="searchVal">
+							<i slot="suffix" class="el-input__icon el-icon-search" @click="onClickSearch"></i>
+						</el-input>
 						<!--<img src="../images/search.png" />-->
-						<i class="el-icon-search md-search-size" :style="{'color':isChangeBg3}"></i>
+						<!--<i class="el-icon-search md-search-size" :style="{'color':isChangeBg3}"></i>-->
 					</div>
 				</div>
 			</div>
@@ -659,7 +665,8 @@
 						isActive2: false,
 						isActive3: false,
 						isHover1: '',
-						index:1
+						index: 1,
+						searchVal: ''
 					}
 				},
 				watch: {
@@ -695,15 +702,15 @@
 					if(this.isChangeBg) {
 						console.log(`111223444`)
 					}
-					if(_this.isChangeBg == '#F8F7F8'){
+					if(_this.isChangeBg == '#F8F7F8') {
 						_this.index = 2
 					}
 					let _setInterval = setInterval(function() {
 						_this.leftLogo = "../images/main" + _this.index + ".png";
 						_this.index++
-						if(_this.index == (_this.isChangeBg == '#F8F7F8' ? 4 : 3)) {
-							_this.index = _this.isChangeBg == '#F8F7F8' ? 2 : 1
-						}
+							if(_this.index == (_this.isChangeBg == '#F8F7F8' ? 4 : 3)) {
+								_this.index = _this.isChangeBg == '#F8F7F8' ? 2 : 1
+							}
 						_setInterval = null
 						clearInterval()
 					}, 2000);
@@ -862,6 +869,9 @@
 						}
 
 						console.log(`头部:${str}`)
+					},
+					onClickSearch: () => {
+						console.log(1111);
 					}
 				}
 			})
